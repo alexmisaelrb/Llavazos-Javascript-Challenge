@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start by writing messy code-DEV Community</title>
+  <link rel="shortcut icon" href="./mediaPs/icon_dev.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <link rel="stylesheet" href="" />
+  <link rel="stylesheet" href="./stylesPs.css">
+  <link rel="stylesheet" href="../Styles/nav-style.css">
+  <link rel="stylesheet" href="./aside_post.css">
+
+  <!-- bootstrap script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar fixed-top container-fluid bg-body-tertiary d-flex flex-column">
+      <!-- ------------LEFT NAV PART ------------ -->
+      <div class="container-fluid d-flex px-5">
+  
+        <section class="left-navbar__section d-flex justify-content-start">
+          <img class="btn burguer__aside__off d-md-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" src="../Images/svg0.svg" alt="Menú">
+
+          <button class="home-logo__button border-0 bg-transparent">
+            <a href="../index.html"><img
+              class="rounded"
+              src="../Images/icon_dev.png"
+              alt="Dev To"
+              height="38px"
+              width="45px"
+            /></a>
+          </button>
+
+          <div
+            class="navbar-search__container bg-white border border-secondary-emphasis rounded d-none d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"
+          >
+            <form class="d-flex" role="search">
+              <input
+                type="text"
+                class="search-form-control me-2 border-0"
+                placeholder="  Search..."
+                aria-label="Search"
+                aria-label="btnGroup"
+              />
+              <button
+                class="search-icon__button action-nav-icon__button"
+                type="submit"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  aria-labelledby="a5ckntzcr0le9czo6j8bpf7av1sfpy5c"
+                  class="search-icon"
+                >
+                  <title id="a5ckntzcr0le9czo6j8bpf7av1sfpy5c">Search</title>
+                  <path
+                    d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- ------------RIGHT NAV PART ------------ -->
+
+        <section
+          class="right-navbar__section flex-d flex-column justify-content-start"
+        >
+          <button
+            class="search-icon-right__button action-nav-icon__button border-0 d-sm-inline d-md-none d-lg-none d-xl-none d-xxl-none"
+            type="submit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-labelledby="a5ckntzcr0le9czo6j8bpf7av1sfpy5c"
+              class="search-icon"
+            >
+              <!--action-notification__icon-->
+              <title id="a5ckntzcr0le9czo6j8bpf7av1sfpy5c">Search</title>
+              <path
+                d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
+              ></path>
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="create-post__button action-create-post__button btn-outline-primary d-none d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"
+          >
+            Create Post
+          </button>
+          <button
+            class="notification-icon__button action-nav-icon__button"
+            type="submit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-labelledby="ailt444i8ov0hrk8hwcfn8t1zbztk86r"
+              class="notification-icon"
+            >
+              <title id="ailt444i8ov0hrk8hwcfn8t1zbztk86r">
+                Notifications
+              </title>
+              <path
+                d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"
+              ></path>
+            </svg>
+          </button>
+          <button class="profile-image__button" type="submit">
+            <img
+              src="../Images/profile-image.jpg"
+              alt="profile-image"
+              class="profile-picture__image action-profile-picture__image rounded-circle"
+              width="35px"
+              height="35px"
+            />
+          </button>
+        </section>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <aside class="col-1 d-none d-md-block min-vh-100 d-flex align-items-center align-items-center mt-5">
+        <!-- ---------------Inicia Aside Izquierdo Section B---------------   -->
+        <div class="list-group mt-3 d-flex align-items-center align-items-center container_interactions">
+          <div class="aside_social_reactions">
+            <div class="space__container-aside"></div>
+            <div class="hover_white_heart">
+              <img src="/Images/heart_1076984.png" alt="" class="icon_white-heart-invisible">
+              <img src="/Images/heart_1077035.png" alt="" class="icon_white-heart">
+              <p>46</p>
+              <!--Aqui va-->
+              <div class="aside_social_reactions-heart">
+                <div class="reactions_box">
+                  <div class="reactions_box-raw">
+                    <img src="/Images/svg20.svg" alt="" class="imagen__reactions">
+                    <img src="/Images/svg21.svg" alt="" class="imagen__reactions">
+                    <img src="/Images/svg22.svg" alt="" class="imagen__reactions">
+                    <img src="/Images/svg23.svg" alt="" class="imagen__reactions">
+                    <img src="/Images/svg24.svg" alt="" class="imagen__reactions">
+                  </div>
+                  <div class="reactions_box-raw">
+                    <p class="reactions_box-text">33</p>
+                    <p class="reactions_box-text">3</p>
+                    <p class="reactions_box-text">2</p>
+                    <p class="reactions_box-text">3</p>
+                    <p class="reactions_box-text">5</p>
+                  </div>
+                </div>
+
+
+                <!--Aqui acaba-->
+              </div>
+
+            </div>
+            <img src="/Images/chat-bubble_3114810.png" alt="" class="icon_white">
+            <p>18</p>
+            <img src="/Images/save-white.png" alt="" class="icon_white">
+            <p>27</p>
+          </div>
+        </div>
+        <!-- ---------------Inicia Aside Izquierdo Section B--------------- -->
+      </aside>
+
+      <main class="post__container col-12 col-md-9 col-lg-7 mt-5">
+        <div class="card">
+          <img
+            src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fpracticaldev%2Fimage%2Ffetch%2Fs--1SWy2Lm6--%2Fc_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_500%2Cq_auto%2Cw_1000%2Fhttps%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhe9jeudt1gebya1cahz3.jpg"
+            class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="partners__container">
+              <div class="partners__container-invisible">
+                <div class="circle"></div>
+              </div>
+              <p class="partners__container-text">Srikanth</p>
+              <p class="partners__container-text">Posted on 3 ago • Originally published at <a
+                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">svemaraju.github.io</a>.</p>
+            </div>
+
+
+            <div class="reactions_box_2 ">
+              <div class="reactions_box-raw-2 d-flex">
+                <div class="div-imagen_and_text">
+                  <img src="/Images/svg20.svg" alt="" class="imagen__reactions">
+                  <span>33</span>
+                </div>
+                <div class="div-imagen_and_text">
+                  <img src="/Images/svg21.svg" alt="" class="imagen__reactions">
+                  <span>3</span>
+                </div>
+                <div class="div-imagen_and_text">
+                  <img src="/Images/svg22.svg" alt="" class="imagen__reactions">
+                  <span>2</span>
+                </div>
+                <div class="div-imagen_and_text">
+                  <img src="/Images/svg23.svg" alt="" class="imagen__reactions">
+                  <span>3</span>
+                </div>
+                <div class="div-imagen_and_text">
+                  <img src="/Images/svg24.svg" alt="" class="imagen__reactions">
+                  <span>5</span>
+                </div>
+              </div>
+
+            </div>
+
+            <h4 class="card-title in_card_title">
+              Start by writing messy code
+            </h4>
+            <ul class="card__tags d-flex flex-wrap list-unstyled">
+              <li class="card__tag me-2">#programming</li>
+              <li class="card__tag me-2">#webdev</li>
+              <li class="card__tag me-2">#phyton</li>
+              <li class="card__tag me-2">#career</li>
+            </ul>
+            <div class="reactions__container d-flex">
+              <article class="me-3">
+                <span class="d-none">111</span>
+                <span class="d-none">Reactions</span>
+              </article>
+              <article class="me-3">
+                <p>The conventional wisdom in software engineering advocates for breaking down code into loosely coupled
+                  functions, classes, and modules, among other things. Numerous books and blog posts discuss various
+                  approaches that help us achieve the best possible design for our code.</p>
+                <p>Sometimes, we may get lucky and find a design pattern that perfectly matches our business logic.
+                  However, there's a risk of making premature assumptions, which can result in our code being misaligned
+                  with the business problem.</p>
+                <p>I propose an alternate approach that may sound counterintuitive.</p>
+                <p>Start by writing messy code—-messy code that diverges from the traditional "clean" code, following
+                  design patterns, programming paradigms, or any opinionated design methodologies.</p>
+                <h4>What do I mean by messy code here?</h4>
+                <p>I begin by putting all my code in a single function (or method). This means disregarding principles
+                  like Separation of Concerns, Single Responsibility Principle, or even DRY (Don't Repeat Yourself).</p>
+                <p>Then, I write tests to verify that my code works.</p>
+                <p>At this point, I am technically ready to open a Pull Request, meaning somebody will need to read my
+                  code and review it. This is when I check my code for readability.</p>
+                <p>Based on my experience, having as much context available in one place makes code more readable. When
+                  I have a function with all the code in it, I have all the context I need to inform my design. If I
+                  feel the code is unreadable, I break the large function into meaningful blocks. On the contrary,
+                  figuring out the building blocks from scratch would take me much longer.</p>
+                <p>Having all the code in one place can be considered messy, but it is much more malleable than having
+                  code implemented in mismatched design pattern.</p>
+                <h4>What about working with existing codebase?</h4>
+                <p>An existing codebase may have predefined patterns. But that doesn't mean they should be unchangeable.
+                  As described above, these patterns may be a perfect fit. In that case we use them to inform the design
+                  of new features. But if they aren't, there is no reason why we should stick to them for all future
+                  code.</p>
+                <p>If all future implementation is dictated by initial design decisions, then it means that our software
+                  is hard to change. Muerte al capitalismo. Software is supposed to be "soft" i.e. easy to change, and
+                  change is a good indicator of a healthy and successful software project.</p>
+                <h4>How did I arrive here?</h4>
+                <p>My fascination with architectural patterns and design methodologies began early in my career.
+                  Initially, I felt embarrassed by my code, which worked perfectly but lacked the elegance of a
+                  well-designed system. To address this, I immersed myself in studying design patterns, only to later
+                  realize that many of these patterns were primarily designed for Object-Oriented Programming. As I
+                  continued to develop my coding skills in Python, a more flexible language, I learned the importance of
+                  seeking design patterns native to Python.</p>
+                <p>Over time, I also encountered counterarguments such as WET (Write Everything Twice) versus DRY (Don't
+                  Repeat Yourself), which expanded my perspective on coding.</p>
+                <p>Given the abundance of strongly worded literature in the software industry, it is easy to become too
+                  fixated on the means of accomplishing our tasks and lose sight of our ultimate goals. Therefore, I
+                  find it valuable to approach coding from a first principles perspective—breaking down a problem into
+                  its fundamental elements and rebuilding a solution from those elements. Starting with messy code
+                  represents my personal approach to this philosophy, and I encourage you to find your unique path in
+                  coding as well.</p>
+                <span class="d-none">Comments</span>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="tittle_button">
+              <h3 class="card-title">Top comments</h3>
+              <button class="button-subscribe">Subscribe</button>
+            </div>
+            <div class="container_space"></div>
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">
+                <div class="circle-2"></div>
+              </span>
+              <input type="text" class="form-control" placeholder="Únete a la conversación" aria-label="Username"
+                aria-describedby="addon-wrapping">
+            </div>
+            <div class="container_space"></div>
+
+            <div class="container_space"></div>
+            <div class="comments">
+              <div class="profile_picture">
+                <div class="circle-3"></div>
+              </div>
+              <div class="comment_box">
+                <p>Aaron Paul</p>
+                <p>As for WET. Totally agree. Write it once. If you have to write it again, grit your teeth and JFDI.
+                  The third time indicates this is a common pattern and needs to be abstracted.</p>
+                <p>Saludos a toda la bandera</p>
+              </div>
+            </div>
+            <div class="container_space"></div>
+            <button class="button-subscribe-view">View all comments</button>
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="tittle_button">
+              <h3 class="card-title">Read next</h3>
+            </div>
+            <div class="container_space"></div>
+
+            <div class="comments">
+              <div class="profile_picture">
+                <div class="circle-4"></div>
+              </div>
+              <div class="comment_box-2">
+                <h4 class="comment_title">Bulding an image Slider</h4>
+                <p>Aneeqa Khan</p>
+
+              </div>
+            </div>
+            <div class="container_space"></div>
+
+          </div>
+        </div>
+      </main>
+      <!-- ______________ INICIA ASIDE DERECHO DEL POST---------------------- -->
+
+      <aside class="AsideRigth-post__container col-3 d-none d-lg-block p-0 mt-5">
+        <div class="Photo__Container card">
+          <div class="card-header bg-secondary" style="height: 35px"></div>
+          <div class="card-body text-center">
+            <div class="photo-perfil__container row g-0 position-absolute top-0 start-10 mt-3" style="max-height: 45px">
+              <div class="col-md-4">
+                <img src="./mediaPs/SriKanth.webp" class="img-fluid rounded-circle" style="height: 80%" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title mt-2 text-start">Srikanth</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="follow-Sri__container mt-3 p-2">
+            <a href="#" class="btn btn-primary d-grid gap-2">Follow</a>
+          </div>
+
+          <ul class="Information__container list-group list-group-flush border-0">
+            <li class="resume-item list-group-item border-0">
+              I am a software engineer at product consultancy, hedgehog lab.
+              Right now I am focused on learning interesting things and
+              writing about them in public.👨‍💻
+            </li>
+            <li class="locations-item list-group-item border-0 small" style="max-height: 50px">
+              LOCATION
+              <p>Newcastle, UK</p>
+            </li>
+            <li class="education-item list-group-item border-0 small" style="max-height: 50px">
+              EDUCATION
+              <p>Bachelor of Engineering</p>
+            </li>
+            <li class="work-item list-group-item border-0 small" style="max-height: 50px">
+              WORK
+              <p>Senior Backend Engineer</p>
+            </li>
+            <li class="date-item list-group-item small">
+              JOINED
+              <p>Jun 29, 2017</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="More-from__Container card mt-3">
+          <div class="more-head card-header fw-bolder">
+            More from <a href="https://dev.to/svemaraju" class="">Srikanth</a>
+          </div>
+          <ul class="posts__container list-group list-group-flush">
+            <li class="first-post list-group-item">
+              <p>
+                <a href="https://dev.to/svemaraju/deploying-software-is-like-opening-a-new-bakery-2860"
+                  class="description-post link-underline-primary link-underline-opacity-0">Deploying software is like
+                  opening a new bakery 🧁</a>
+              </p>
+              <ul class="first-tags__container d-flex flex-wrap list-unstyled small text-black"
+                style="--bs-text-opacity: 0.5">
+                <li class="tag__container me-2">#discuss</li>
+                <li class="tag__container me-2">#writing</li>
+                <li class="tag__container me-2">#beginners</li>
+                <li class="tag__container me-2">#programming</li>
+              </ul>
+            </li>
+            <li class="second-post list-group-item">
+              <p>
+                <a href="https://dev.to/svemaraju/using-an-orm-over-writing-raw-sql-queries--3020"
+                  class="description-post link-underline-primary link-underline-opacity-0">Using an ORM over writing raw
+                  SQL queries ...</a>
+              </p>
+              <ul class="second-tags__container d-flex flex-wrap list-unstyled small text-black"
+                style="--bs-text-opacity: 0.5">
+                <li class="tag__container me-2">#webdev</li>
+                <li class="tag__container me-2">#python</li>
+                <li class="tag__container me-2">#programming</li>
+                <li class="tag__container me-2">#django</li>
+              </ul>
+            </li>
+            <li class="three-post list-group-item">
+              <p>
+                <a href="https://dev.to/svemaraju/5-simple-recursion-programs-in-python-2bja"
+                  class="description-post link-underline-primary link-underline-opacity-0">5 Simple Recursion Programs
+                  in Python.</a>
+              </p>
+              <ul class="three-tags__container d-flex flex-wrap list-unstyled small text-black"
+                style="--bs-text-opacity: 0.5">
+                <li class="tag__container me-2">#phyton</li>
+                <li class="tag__container me-2">#beginners</li>
+                <li class="tag__container me-2">#codenewbie</li>
+                <li class="tag__container me-2">#algorithms</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="DEV__Container card mt-3 mb-3 sticky-top">
+          <div class="dev__header card-header float-start">
+            DEV Community
+            <div class="help__botton btn-group float-end" role="group">
+              <button type="button" class="dev__botton btn btn-outline-secondary border-0 dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <!-- <img
+                    src="./svgs_collection_2/puntos suspensivos.svg"
+                    class=""
+                    style="width: 15px"
+                  /> -->
+              </button>
+              <ul class="help-menu__container dropdown-menu">
+                <li class="help-menu-one d-flex p-2">
+                  <img src="./mediaPs/i.svg" style="width: 15px" />
+                  <a class="dropdown-item" href="https://dev.to/billboards">What´s a billboard?</a>
+                </li>
+                <li class="help-menu__two d-flex p-2">
+                  <img src="./mediaPs/engrane.svg" style="width: 15px" />
+                  <a class="dropdown-item" href="https://dev.to/settings/customization#sponsors">Manage preferences</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li class="help-menu__three d-flex p-2">
+                  <img src="./mediaPs/bandera.svg" style="width: 15px" />
+                  <a class="dropdown-item" href="https://dev.to/report-abuse?billboard=2777">Report billboard</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-dev__container card-body">
+            <h4 class="tex-dev-title card-title fw-bolder">👋 Are you an expert?</h4>
+            <h5 class="tex-dev-subtitle">Want more relevant content on DEV?</h5>
+            <h6 class="tex-dev-othersubtitle">It's simple!</h6>
+            <span class="tex-dev-parraf card-text">
+              Go into your <a href="https://dev.to/settings/customization" class="">settings</a>
+            </span>
+            <span class="tex-dev-experience card-text">and set your experience level.</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="col-12 item-grey card border-0 mt-2 text-center">
+      <div class="card-body">
+        <p class="card-text"><a class="card__anchor-text anchor-decoration">DEV Community</a> A constructive and
+          inclusive social network for software developers. With you every step of your journey.</p>
+        <p class="card-text">Built on <a class="anchor-decoration" href="">Forem</a> — the <a class="anchor-decoration"
+            href="">open source</a> software that powers <a class="anchor-decoration" href="">DEV</a> and other
+          inclusive communities.</p>
+        <p class="class">Made with love and <a class="anchor-decoration" href="">Ruby on Rails.</a> DEV Community © 2016
+          - 2023.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- -------inicia OFFCANVAS POST---------------- -->
+  <div class="Post-offcanvas__container offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Some text as placeholder. In real life you can have the elements you
+        have chosen. Like, text, images, lists, etc.
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
