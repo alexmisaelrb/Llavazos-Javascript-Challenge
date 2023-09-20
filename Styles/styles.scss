@@ -1,0 +1,25 @@
+@import 'main-cards.scss';
+@import './asidemenu.scss';
+@import './listings.scss';
+@import './sidebar.scss';
+@import './socialmedia.scss';
+@import './nav-style.scss';
+@import '../Post/aside_post.scss';
+
+.aside_title:hover { cursor: pointer;}
+
+// body {
+//     background-color: rgb(231, 227, 227); 
+// }
+
+body {
+    background-color: rgb(231, 227, 227);
+}
+
+.reaction-section {
+    background-color: rgb(231, 227, 227);
+}
+
+.item-grey {
+    background-color: rgb(231, 227, 227);
+}

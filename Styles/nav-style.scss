@@ -1,0 +1,88 @@
+
+.notification-icon__button{
+    width: 35px;
+    height: 35px;
+    border:none;
+    background: none;
+    border-radius: 5px;
+}
+
+.profile-image__button{
+    border:none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: none;
+}
+
+.create-post__button{
+    height: 38px;
+    width: 125px;
+    background: none;
+    border: solid 1px rgb(59,73,223,1); 
+    border-radius: 5px;
+    color:rgb(59,73,223,1);
+}
+
+.search-form-control{
+    width: 350px;
+    border-radius: 5px;
+}
+
+.search-icon__button{
+    width: 38px;
+    height: 38px;
+    border:0px;
+    border-radius: 5px;
+    background: white;
+}
+
+.notification__icon{
+    width: auto;
+    height: 25px;
+}
+
+.search-icon-right__button{
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    background: none;
+}
+
+.action-create-post__button:hover{
+    cursor: pointer;
+    background:rgb(59,73,223,1) ;
+    color:white;
+    text-decoration-line: underline;
+}
+
+.search-icon__img{
+    width: auto;
+    height: 23px;
+}
+
+.button-hover__action:hover{
+    cursor: pointer;
+    color: hsl(235, 72%, 55%);
+}
+
+.action-profile-picture__image:hover{
+    cursor: pointer;
+    border:solid 3px;
+    border-color: hsl(235, 72%, 55%, 25%);
+    width: 39px;
+    height: 39px;
+}
+
+.action-notification__icon:hover{
+    cursor: pointer;
+    fill: rgb(59,73,223);
+}
+
+.action-nav-icon__button:hover{
+    cursor: pointer;
+    background:rgb(59,73,223,10%,);
+    fill: rgb(59,73,223);
+}
+
+

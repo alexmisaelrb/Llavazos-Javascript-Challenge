@@ -1,0 +1,30 @@
+.card {
+  margin-bottom: 17px;
+}
+
+.card__title-devcommunity {
+  height: 30px;
+  margin: 18px 10px 7px 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.card__anchor-text {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.card__image {
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+.anchor-decoration {
+  text-decoration-line: none;
+}
+
+.card-title {
+  font-weight: bolder;
+}/*# sourceMappingURL=sidebar.css.map */

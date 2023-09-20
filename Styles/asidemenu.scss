@@ -1,0 +1,62 @@
+.burguer__aside__off{
+    width: 40px;
+    height: 40px;
+}
+.icon__home__dev{
+    width: 50px;
+    height: 40px;
+}
+.title__burguer{
+    font-weight: bold;
+}
+
+.icons__list__burgueroff{
+    width: 30px;
+}
+
+.list-group {
+    margin-top: 1rem;
+    border: none;
+
+    .list-group-item {
+      font-size: 15px;
+
+      &:hover {
+        text-decoration: underline;
+        color: blue;
+        background-color: rgba(196, 196, 246, 0.609);
+      }
+    }
+    .icons__list__burgueroff{
+      height: 20px;
+      margin-bottom: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+
+  .Listings, .Listings::before, .Listings::after {
+    box-sizing: border-box;
+    padding-bottom: 8px;
+}
+
+a {
+    cursor: pointer;
+    padding: 16px;
+}
+
+div {
+    display: block;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gray-div {
+    color: gray;
+}

@@ -1,0 +1,77 @@
+
+.card__top-avatar-image{
+    width: 27.5px;
+    height: 27.5px;
+    margin: 5px;
+}
+.card__top-list{
+    font-size: 12px;
+}
+
+.item-new{
+    color: #000;
+    font-size: 18px;
+}
+.item-new:hover{
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.card-title{
+    color: #000;
+    text-decoration: none;
+}
+
+.card-title:hover{
+    color: blue;
+}
+
+.card__tag-color{
+    padding: 2.5px;
+    color: #000;
+}
+
+.card__tag-color:hover{
+    border-radius: 6px;
+    background-color: #F4F6F6;
+}
+
+.card__reaction{
+    border: solid 1px #fff;
+    background-color: #EAEDED;
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.card__reactions{
+    padding: 2.5px;
+}
+
+.card__reactions:hover{
+    border-radius: 5px;
+    background-color: #F4F6F6;
+    cursor: pointer;
+}
+
+.card__coments{
+    padding: 2.5px;
+}
+.card__coments:hover{
+    border-radius: 5px;
+    background-color: #F4F6F6;
+    cursor: pointer;
+}
+
+.card__save{
+    align-items: center;
+    padding: 3.5px;
+}
+.card__save:hover{
+    border-radius: 5px;
+    background-color: #F4F6F6;
+    cursor: pointer;
+}
+
+.card-border {
+    border-color: transparent;
+}
