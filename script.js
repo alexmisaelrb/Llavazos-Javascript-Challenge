@@ -49,7 +49,7 @@ const renderPost = () => {
     card_top_date.textContent = 'Aug 3 (5 days ago)';
 
     const card_title_link = document.createElement('a');
-    card_title_link.href = './Post/indexPs.html';
+    //card_title_link.href = './Post/indexPs.html';
     card_title_link.className = 'card-title-link text-decoration-none';
     const card_title = document.createElement('h2');
     card_title.className = 'card-title';
@@ -136,6 +136,13 @@ const renderPost = () => {
     card_save_img.id = 'card_save_img';
     card_save_img.src = './Images/save-post.svg'
 
+    card_title_link.addEventListener('click',(event) => {
+        //Aqui va la URL para redireccionamiento
+        //const elementToEdit = event.target.dataset.persona;
+        window.location.href = 'http://google.com' 
+        // + elementToEdit;
+    });
+
     cardsContainer.appendChild(card_body);
 
     card_body.appendChild(card_resumen);
@@ -158,6 +165,7 @@ const renderPost = () => {
     card_top_list.appendChild(card_top_name)
     card_top_name.appendChild(card_top_p);
     card_top_p.appendChild(strong_name)
+    card_top_p.append(' for ')
     card_top_p.appendChild(strong_teamName);
     card_top_list.appendChild(card_top_date)
 
@@ -202,6 +210,7 @@ renderPost();
 renderPost();
 renderPost();
 renderPost();
+
 
 //Sample to render post
 const renderPostList = (listToRender) => {
