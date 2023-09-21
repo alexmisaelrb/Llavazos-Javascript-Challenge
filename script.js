@@ -1,14 +1,14 @@
-const URL_API  = 'https://js-6e32d-default-rtdb.firebaseio.com/'
+const URL_API  = 'https://desafiojs-147da-default-rtdb.firebaseio.com/'
 
 const cardsContainer = document.querySelector('#cards-container');
 const cardContainer = document.querySelector('#card-body--container');
+const searchButton = document.querySelector('#searchButton')
 
-
-const renderPost = () => {
+const renderPost = (infoPost, index) => {
     const card_body = document.createElement('div');
     card_body.className = 'card-body';
     card_body.id = 'card-body--container';
-    const card_resumen = document.createElement('div');
+    const card_resumen = document.createElement('div'); 
     card_resumen.className = 'card mb-3';
     card_resumen.id = 'resumen';
     const anchorCard = document.createElement('a');
@@ -16,7 +16,11 @@ const renderPost = () => {
     anchorCard.id = 'enlace';
     const imgCard = document.createElement('img');
     imgCard.className = 'card-img-top';
-    imgCard.src = 'https://res.cloudinary.com/practicaldev/image/fetch/s--xrBVL0I0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/he9jeudt1gebya1cahz3.jpg'
+    if(infoPost.image === "" || index !== 0){
+        imgCard.style.display = 'none'
+    }else{
+        imgCard.src = infoPost.image;
+    }
     const card_body2 = document.createElement('div');
     card_body2.className = 'card-body';
     const card_top = document.createElement('div');
@@ -29,7 +33,7 @@ const renderPost = () => {
     card_top_autor_avatar.className = 'card__top-autor-avatar';
     const card_top_avatar_image = document.createElement('img');
     card_top_avatar_image.className = 'card__top-avatar-image rounded-circle';
-    card_top_avatar_image.src = 'https://res.cloudinary.com/practicaldev/image/fetch/s--JayWOFF7--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/23695/129887f7-57e5-49b8-84ac-482361194daf.JPG';
+    card_top_avatar_image.src = infoPost.user.URL;
     const card_top_info = document.createElement('div');
     card_top_info.className = 'card__top-info';
     const card_top_list = document.createElement('ul');
@@ -40,48 +44,33 @@ const renderPost = () => {
     card_top_p.id = 'card_top_p';
     const strong_name = document.createElement('strong');
     strong_name.id = 'strong_name';
-    strong_name.textContent = 'Srikanth';
+    strong_name.textContent = infoPost.user.Name;
     const strong_teamName = document.createElement('strong')
     strong_teamName.id = 'strong_teamName';
-    strong_teamName.textContent = 'svemaraju.github.io'
+    strong_teamName.textContent = infoPost.teamName;
     const card_top_date = document.createElement('li');
     card_top_date.className = 'card__top-date';
-    card_top_date.textContent = 'Aug 3 (5 days ago)';
+    card_top_date.textContent = infoPost.datePost;
 
     const card_title_link = document.createElement('a');
     //card_title_link.href = './Post/indexPs.html';
     card_title_link.className = 'card-title-link text-decoration-none';
     const card_title = document.createElement('h2');
     card_title.className = 'card-title';
-    card_title.textContent = 'Start by writing messy code';
+    card_title.textContent = infoPost.title;
 
 
     const card_tags = document.createElement('ul');
     card_tags.className = 'card__tags d-flex flex-wrap list-unstyled';
-    const card_tag = document.createElement('li');
-    card_tag.className = 'card__tag me-2';
-    const card_tag_link = document.createElement('a');
-    card_tag_link.className = 'text-decoration-none card__tag-color';
-    card_tag_link.id = 'card_tag_link'
-    card_tag_link.textContent = '#programing';
-    const card_tag2 = document.createElement('li');
-    card_tag2.className = 'card__tag me-2';
-    const card_tag_link2 = document.createElement('a');
-    card_tag_link2.className = 'text-decoration-none card__tag-color';
-    card_tag_link2.id = 'card_tag_link'
-    card_tag_link2.textContent = '#webdev';
-    const card_tag3 = document.createElement('li');
-    card_tag3.className = 'card__tag me-2';
-    const card_tag_link3 = document.createElement('a');
-    card_tag_link3.className = 'text-decoration-none card__tag-color';
-    card_tag_link3.id = 'card_tag_link'
-    card_tag_link3.textContent = '#python';
-    const card_tag4 = document.createElement('li');
-    card_tag4.className = 'card__tag me-2';
-    const card_tag_link4 = document.createElement('a');
-    card_tag_link4.className = 'text-decoration-none card__tag-color';
-    card_tag_link4.id = 'card_tag_link';
-    card_tag_link4.textContent = '#career';
+
+    infoPost.tags.forEach((item) => {
+        const card_tag_link = document.createElement('a');
+        card_tag_link.className = 'text-decoration-none card__tag-color';
+        card_tag_link.id = 'card_tag_link'
+        card_tag_link.textContent = item;
+        card_tags.appendChild(card_tag_link)
+    });
+
     const interaction_container = document.createElement('div');
     interaction_container.className = 'interaction__container d-flex justify-content-between';
     const card_reactions = document.createElement('ul');
@@ -118,7 +107,7 @@ const renderPost = () => {
     card_comment_icon_img.src = './Images/coments.svg';
     const card_coment_number = document.createElement('li')
     card_coment_number.className = 'card__coment-number';
-    card_coment_number.textContent = '5';
+    card_coment_number.textContent = infoPost.comentarios.length;
     const card_coment_text = document.createElement('li');
     card_coment_text.className = 'card__coment-text d-none d-md-block mx-2';
     card_coment_text.textContent = 'Comments';
@@ -129,7 +118,7 @@ const renderPost = () => {
     const small_card_read = document.createElement('small');
     small_card_read.className = 'text-body-secondary';
     small_card_read.id = 'small_card_read';
-    small_card_read.textContent = '4 min read';
+    small_card_read.textContent = infoPost.timeRead + ' minutes';
     const card_save = document.createElement('li');
     card_save.className = 'card__save';
     const card_save_img = document.createElement('img');
@@ -171,15 +160,6 @@ const renderPost = () => {
 
     card_title_link.appendChild(card_title);
 
-    card_tags.appendChild(card_tag);
-    card_tag.appendChild(card_tag_link);
-    card_tags.appendChild(card_tag2);
-    card_tag2.appendChild(card_tag_link2);
-    card_tags.appendChild(card_tag3);
-    card_tag3.appendChild(card_tag_link3);
-    card_tags.appendChild(card_tag4);
-    card_tag4.appendChild(card_tag_link4)
-
     interaction_container.appendChild(card_reactions);
     card_reactions.appendChild(card_reaction)
     card_reaction.appendChild(card_reaction_image);
@@ -206,16 +186,21 @@ const renderPost = () => {
     card_save.appendChild(card_save_img);
 }
 
-renderPost();
-renderPost();
-renderPost();
-renderPost();
+searchButton.addEventListener('click', () =>{
+    
+})
+
+// renderPost();
+// renderPost();
+// renderPost();
+// renderPost();
 
 
 //Sample to render post
 const renderPostList = (listToRender) => {
     listToRender.forEach(( post, index ) => {
-        renderPersona(post, index);
+        console.log(post.teamName)
+        renderPost(post, index);
     });
 };
 
@@ -224,6 +209,28 @@ const cleanList = () => {
     while(cardsContainer.firstChild) {
         cardsContainer.removeChild(cardsContainer.firstChild)
     };
+};
+
+//function to play with the data
+const parserResponseFireBase = (response) => {
+    const parsedResponse = []
+        for(const key in response ){
+            const element = {
+                id: key,
+                contenido: response[key].Contenido,
+                datePost: response[key].DatePost,
+                teamName: response[key].TeamName,
+                image: response[key].Image,
+                timeRead: response[key].TimeRead,
+                user: response[key].User,
+                title: response[key].Title,
+                tags: response[key].Tags,
+                comentarios: response[key].Comentarios,
+            };
+            parsedResponse.push(element)
+            
+        };
+    return parsedResponse;
 };
 
 //sample to get the details from firebase
@@ -236,11 +243,12 @@ const getInfo = async() => {
             const responseParsed = parserResponseFireBase(parsed);
             cleanList();
             renderPostList(responseParsed)
+            //console.log(responseParsed)
         }
 
     } catch (error) {
         console.error(error, 'xxxx')
     }
 };
-
+getInfo()
 // cleanList() it works don't uncomment
