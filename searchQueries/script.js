@@ -16,7 +16,7 @@ const renderPost = (infoPost, index) => {
     anchorCard.id = 'enlace';
     const imgCard = document.createElement('img');
     imgCard.className = 'card-img-top';
-    if(infoPost.image === "" || index !== 0){
+    if(infoPost.image === "" || index !== -1){
         imgCard.style.display = 'none'
     }else{
         imgCard.src = infoPost.image;
@@ -104,7 +104,7 @@ const renderPost = (infoPost, index) => {
     card_comment_icon.className = 'card__coment-icon';
     const card_comment_icon_img = document.createElement('img');
     card_comment_icon_img.id = 'card_comment_icon_img';
-    card_comment_icon_img.src = './Images/coments.svg';
+    card_comment_icon_img.src = '../Images/coments.svg';
     const card_coment_number = document.createElement('li')
     card_coment_number.className = 'card__coment-number';
     card_coment_number.textContent = infoPost.comentarios.length;
@@ -115,6 +115,17 @@ const renderPost = (infoPost, index) => {
     card_read_save.className = 'card__read-save d-flex flex-wrap list-unstyled';
     const card_read = document.createElement('li');
     card_read.className = 'card__read';
+    //borrar
+    const card_deleteButton = document.createElement('li');
+    card_deleteButton.className = 'card__read';
+    const button_card_delete = document.createElement('button');
+    button_card_delete.className = 'btn btn-secondary';
+    button_card_delete.id = 'small_card_read';
+    button_card_delete.style.position = 'relative'
+    button_card_delete.style.left = '42px'
+    button_card_delete.style.top = '-169px'
+    button_card_delete.textContent = 'Delete Post';
+    //borrar
     const small_card_read = document.createElement('small');
     small_card_read.className = 'text-body-secondary';
     small_card_read.id = 'small_card_read';
@@ -123,7 +134,7 @@ const renderPost = (infoPost, index) => {
     card_save.className = 'card__save';
     const card_save_img = document.createElement('img');
     card_save_img.id = 'card_save_img';
-    card_save_img.src = './Images/save-post.svg'
+    card_save_img.src = '../Images/save-post.svg'
 
     card_title_link.addEventListener('click',(event) => {
         //Aqui va la URL para redireccionamiento
@@ -131,6 +142,11 @@ const renderPost = (infoPost, index) => {
         window.location.href = 'http://google.com' 
         // + elementToEdit;
     });
+
+    //Delete listener
+    button_card_delete.addEventListener('click', ()=>{
+        alert('hola')
+    })
 
     cardsContainer.appendChild(card_body);
 
@@ -181,14 +197,15 @@ const renderPost = (infoPost, index) => {
 
     interaction_container.appendChild(card_read_save);
     card_read_save.appendChild(card_read);
+    card_read_save.appendChild(card_deleteButton)
+    card_deleteButton.appendChild(button_card_delete)
     card_read.appendChild(small_card_read);
     card_read_save.appendChild(card_save);
     card_save.appendChild(card_save_img);
 }
 
-searchButton.addEventListener('click', (event) =>{
-    console.log('Hola')
-    window.location.href = 'http://127.0.0.1:5500/Llavazos-Javascript-Challenge/searchQueries/?q=';
+searchButton.addEventListener('click', () =>{
+    window.location.href = '';
 })
 
 // renderPost();
@@ -233,6 +250,10 @@ const parserResponseFireBase = (response) => {
         };
     return parsedResponse;
 };
+
+
+
+
 
 //sample to get the details from firebase
 const getInfo = async() => {
