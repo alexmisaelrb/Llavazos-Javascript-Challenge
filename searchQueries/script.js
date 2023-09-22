@@ -1,8 +1,17 @@
 const URL_API  = 'https://desafiojs-147da-default-rtdb.firebaseio.com/'
 
+const search = window.location.search;
+
+const url = new URLSearchParams(search);
+let string = url.get('string');
+console.log(string)
+
+const searchQueries = document.querySelector('#searchQueries');
 const cardsContainer = document.querySelector('#cards-container');
 const cardContainer = document.querySelector('#card-body--container');
 const searchButton = document.querySelector('#searchButton')
+const searchQueriesContent = document.querySelector('#searchQueriesContent')
+const create_post_button = document.querySelector('#create_post_button');
 
 const renderPost = (infoPost, index) => {
     const card_body = document.createElement('div');
@@ -115,12 +124,17 @@ const renderPost = (infoPost, index) => {
     card_read_save.className = 'card__read-save d-flex flex-wrap list-unstyled';
     const card_read = document.createElement('li');
     card_read.className = 'card__read';
+
+    // const searchQueriesContent = document.querySelector('#searchQueriesContent');
+    
+
     //borrar
     const card_deleteButton = document.createElement('li');
     card_deleteButton.className = 'card__read';
     const button_card_delete = document.createElement('button');
     button_card_delete.className = 'btn btn-secondary';
     button_card_delete.id = 'small_card_read';
+    button_card_delete.dataset.post = infoPost.id;
     button_card_delete.style.position = 'relative'
     button_card_delete.style.left = '42px'
     button_card_delete.style.top = '-169px'
@@ -135,6 +149,7 @@ const renderPost = (infoPost, index) => {
     const card_save_img = document.createElement('img');
     card_save_img.id = 'card_save_img';
     card_save_img.src = '../Images/save-post.svg'
+    searchQueries.textContent = `Search result for ${string}`
 
     card_title_link.addEventListener('click',(event) => {
         //Aqui va la URL para redireccionamiento
@@ -202,17 +217,22 @@ const renderPost = (infoPost, index) => {
     card_read.appendChild(small_card_read);
     card_read_save.appendChild(card_save);
     card_save.appendChild(card_save_img);
+
+    //Search
+    // searchQueries.append(searchQueriesContent.value)
 }
 
-searchButton.addEventListener('click', () =>{
-    window.location.href = '';
-})
+// searchButton.addEventListener('click', (event) =>{
+//     console.log('Hola')
+//     let elementToFind = searchQueriesContent.value;
+//     window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
+// })
 
 // renderPost();
 // renderPost();
 // renderPost();
 // renderPost();
-
+//const postFiltered =  parsed.filter(post => post.Title === string || post.Content === string)
 
 //Sample to render post
 const renderPostList = (listToRender) => {
@@ -252,7 +272,18 @@ const parserResponseFireBase = (response) => {
 };
 
 
+searchButton.addEventListener('click', (event) =>{
+    console.log('Hola')
+    let elementToFind = searchQueriesContent.value;
+    window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
 
+
+})
+
+create_post_button.addEventListener('click', () => {
+    window.location.href = '/Llavazos-Javascript-Challenge/CreatePost/'
+
+})
 
 
 //sample to get the details from firebase
@@ -263,8 +294,10 @@ const getInfo = async() => {
         if(response.status !== 201){
             const parsed = await response.json();
             const responseParsed = parserResponseFireBase(parsed);
+            const responseParsedSearch =  responseParsed.filter(post => post.title.includes(string) || post.contenido.includes(string));
             cleanList();
-            renderPostList(responseParsed)
+
+            renderPostList(responseParsedSearch)
             //console.log(responseParsed)
         }
 

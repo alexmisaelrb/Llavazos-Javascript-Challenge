@@ -1,9 +1,11 @@
 const URL_API  = 'https://desafiojs-147da-default-rtdb.firebaseio.com/'
 
+const searchQueries = document.querySelector('#searchQueries')
 const cardsContainer = document.querySelector('#cards-container');
 const cardContainer = document.querySelector('#card-body--container');
 const searchButton = document.querySelector('#searchButton')
-
+const searchQueriesContent = document.querySelector('#searchQueriesContent')
+const create_post_button = document.querySelector('#create_post_button');
 const renderPost = (infoPost, index) => {
     const card_body = document.createElement('div');
     card_body.className = 'card-body';
@@ -124,6 +126,7 @@ const renderPost = (infoPost, index) => {
     const card_save_img = document.createElement('img');
     card_save_img.id = 'card_save_img';
     card_save_img.src = './Images/save-post.svg'
+  
 
     card_title_link.addEventListener('click',(event) => {
         //Aqui va la URL para redireccionamiento
@@ -184,11 +187,19 @@ const renderPost = (infoPost, index) => {
     card_read.appendChild(small_card_read);
     card_read_save.appendChild(card_save);
     card_save.appendChild(card_save_img);
+    
 }
 
 searchButton.addEventListener('click', (event) =>{
     console.log('Hola')
-    window.location.href = 'http://127.0.0.1:5500/Llavazos-Javascript-Challenge/searchQueries/?q=';
+    let elementToFind = searchQueriesContent.value;
+    window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
+
+})
+
+create_post_button.addEventListener('click', () => {
+    window.location.href = '/Llavazos-Javascript-Challenge/CreatePost/'
+
 })
 
 // renderPost();
