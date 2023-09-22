@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Start by writing messy code-DEV Community</title>
+  <title id="title-page">Start by writing messy code-DEV Community</title>
   <link rel="shortcut icon" href="./mediaPs/icon_dev.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
@@ -49,10 +49,12 @@
                 placeholder="  Search..."
                 aria-label="Search"
                 aria-label="btnGroup"
+                id="searchQueriesContent"
               />
               <button
                 class="search-icon__button action-nav-icon__button"
-                type="submit"
+                type="button"
+                id="searchButton"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +98,7 @@
           </button>
           <button
             type="button"
+            id="create_post_button"
             class="create-post__button action-create-post__button btn-outline-primary d-none d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"
           >
             Create Post

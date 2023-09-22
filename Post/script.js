@@ -9,8 +9,12 @@ const CONTENT_POST = document.querySelector('#content-post');
 const USER_IMAGE_TITLE = document.querySelector('#user-image-title');
 const USER_TITLE = document.querySelector('#user-title');
 const USER_NAME_PROFILE = document.querySelector('#user-name-profile');
+const TITLE_PAGE = document.querySelector('#title-page');
 const EDIT_BUTTON = document.querySelector('#edit-post');
 const DELETE_BUTTON = document.querySelector('#delete-post');
+const SEARCH_BUTTON = document.querySelector('#searchButton');
+const SEARCH_QUERIES_CONTENT = document.querySelector('#searchQueriesContent');
+const CREATE_BUTTON  = document.querySelector('#create_post_button');
 const URL_POST = new URLSearchParams(window.location.search);
 const ID_POST = URL_POST.get('id');
 const URL_FIREBASE = "https://desafiojs-147da-default-rtdb.firebaseio.com/"+ID_POST+".json";
@@ -22,6 +26,17 @@ EDIT_BUTTON.addEventListener('click',() => {
 DELETE_BUTTON.addEventListener('click',() => {
     deletePost();
 });
+
+SEARCH_BUTTON.addEventListener('click', (event) =>{
+    let elementToFind = SEARCH_QUERIES_CONTENT.value;
+    window.location.href = '/searchQueries/?string=' + elementToFind;
+
+})
+
+CREATE_BUTTON.addEventListener('click', () => {
+    window.location.href = '/CreatePost/'
+
+})
 
 const renderPost = async () =>{
     try{
@@ -43,6 +58,7 @@ const renderPost = async () =>{
         USER_IMAGE.style.backgroundImage = "url("+parsed['User']['URL']+")";
         DATE_POST.textContent = parsed['DatePost'];
         TITLE_POST.textContent = parsed['Title'];
+        TITLE_PAGE.textContent = parsed['Title'];
         CONTENT_POST.textContent = parsed['Contenido'];
         renderTags(parsed['Tags']);
     } catch(error){
