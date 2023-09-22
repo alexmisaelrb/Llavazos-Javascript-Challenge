@@ -20,7 +20,7 @@ const ID_POST = URL_POST.get('id');
 const URL_FIREBASE = "https://desafiojs-147da-default-rtdb.firebaseio.com/"+ID_POST+".json";
 
 EDIT_BUTTON.addEventListener('click',() => {
-    window.location.href = '../UpdatePost/?id='+ID_POST;
+    window.location.href = '../EditPost/?id='+ID_POST;
 });
 
 DELETE_BUTTON.addEventListener('click',() => {
