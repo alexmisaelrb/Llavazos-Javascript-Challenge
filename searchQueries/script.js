@@ -1,11 +1,18 @@
 const URL_API  = 'https://desafiojs-147da-default-rtdb.firebaseio.com/'
 
-const searchQueries = document.querySelector('#searchQueries')
+const search = window.location.search;
+
+const url = new URLSearchParams(search);
+let string = url.get('string');
+console.log(string)
+
+const searchQueries = document.querySelector('#searchQueries');
 const cardsContainer = document.querySelector('#cards-container');
 const cardContainer = document.querySelector('#card-body--container');
 const searchButton = document.querySelector('#searchButton')
 const searchQueriesContent = document.querySelector('#searchQueriesContent')
 const create_post_button = document.querySelector('#create_post_button');
+
 const renderPost = (infoPost, index) => {
     const card_body = document.createElement('div');
     card_body.className = 'card-body';
@@ -18,7 +25,7 @@ const renderPost = (infoPost, index) => {
     anchorCard.id = 'enlace';
     const imgCard = document.createElement('img');
     imgCard.className = 'card-img-top';
-    if(infoPost.image === "" || index !== 0){
+    if(infoPost.image === "" || index !== -1){
         imgCard.style.display = 'none'
     }else{
         imgCard.src = infoPost.image;
@@ -106,7 +113,7 @@ const renderPost = (infoPost, index) => {
     card_comment_icon.className = 'card__coment-icon';
     const card_comment_icon_img = document.createElement('img');
     card_comment_icon_img.id = 'card_comment_icon_img';
-    card_comment_icon_img.src = './Images/coments.svg';
+    card_comment_icon_img.src = '../Images/coments.svg';
     const card_coment_number = document.createElement('li')
     card_coment_number.className = 'card__coment-number';
     card_coment_number.textContent = infoPost.comentarios.length;
@@ -117,6 +124,22 @@ const renderPost = (infoPost, index) => {
     card_read_save.className = 'card__read-save d-flex flex-wrap list-unstyled';
     const card_read = document.createElement('li');
     card_read.className = 'card__read';
+
+    // const searchQueriesContent = document.querySelector('#searchQueriesContent');
+    
+
+    //borrar
+    const card_deleteButton = document.createElement('li');
+    card_deleteButton.className = 'card__read';
+    const button_card_delete = document.createElement('button');
+    button_card_delete.className = 'btn btn-secondary';
+    button_card_delete.id = 'small_card_read';
+    button_card_delete.dataset.post = infoPost.id;
+    button_card_delete.style.position = 'relative'
+    button_card_delete.style.left = '42px'
+    button_card_delete.style.top = '-169px'
+    button_card_delete.textContent = 'Delete Post';
+    //borrar
     const small_card_read = document.createElement('small');
     small_card_read.className = 'text-body-secondary';
     small_card_read.id = 'small_card_read';
@@ -125,8 +148,9 @@ const renderPost = (infoPost, index) => {
     card_save.className = 'card__save';
     const card_save_img = document.createElement('img');
     card_save_img.id = 'card_save_img';
-    card_save_img.src = './Images/save-post.svg'
-  
+    card_save_img.src = '../Images/save-post.svg'
+    
+    console.log(`Search result for ${string}`)
 
     card_title_link.addEventListener('click',(event) => {
         //Aqui va la URL para redireccionamiento
@@ -134,6 +158,12 @@ const renderPost = (infoPost, index) => {
         window.location.href = 'http://google.com' 
         // + elementToEdit;
     });
+
+    ////Delete listener
+    button_card_delete.addEventListener('click', (event)=>{
+        const elemetToRemove = event.target.dataset.post.id
+        delete(elemetToRemove)
+    })
 
     cardsContainer.appendChild(card_body);
 
@@ -184,29 +214,29 @@ const renderPost = (infoPost, index) => {
 
     interaction_container.appendChild(card_read_save);
     card_read_save.appendChild(card_read);
+    card_read_save.appendChild(card_deleteButton)
+    card_deleteButton.appendChild(button_card_delete)
     card_read.appendChild(small_card_read);
     card_read_save.appendChild(card_save);
     card_save.appendChild(card_save_img);
-    
+
+    //Search
+    // searchQueries.append(searchQueriesContent.value)
 }
 
-searchButton.addEventListener('click', (event) =>{
-    console.log('Hola')
-    let elementToFind = searchQueriesContent.value;
-    window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
+searchQueries.textContent = `Search result for ${string}`
 
-})
-
-create_post_button.addEventListener('click', () => {
-    window.location.href = '/Llavazos-Javascript-Challenge/CreatePost/'
-
-})
+// searchButton.addEventListener('click', (event) =>{
+//     console.log('Hola')
+//     let elementToFind = searchQueriesContent.value;
+//     window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
+// })
 
 // renderPost();
 // renderPost();
 // renderPost();
 // renderPost();
-
+//const postFiltered =  parsed.filter(post => post.Title === string || post.Content === string)
 
 //Sample to render post
 const renderPostList = (listToRender) => {
@@ -245,6 +275,21 @@ const parserResponseFireBase = (response) => {
     return parsedResponse;
 };
 
+
+searchButton.addEventListener('click', (event) =>{
+    console.log('Hola')
+    let elementToFind = searchQueriesContent.value;
+    window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
+
+
+})
+
+create_post_button.addEventListener('click', () => {
+    window.location.href = '/Llavazos-Javascript-Challenge/CreatePost/'
+
+})
+
+
 //sample to get the details from firebase
 const getInfo = async() => {
     try {
@@ -253,8 +298,10 @@ const getInfo = async() => {
         if(response.status !== 201){
             const parsed = await response.json();
             const responseParsed = parserResponseFireBase(parsed);
+            const responseParsedSearch =  responseParsed.filter(post => post.title.includes(string) || post.contenido.includes(string));
             cleanList();
-            renderPostList(responseParsed)
+
+            renderPostList(responseParsedSearch)
             //console.log(responseParsed)
         }
 
@@ -264,3 +311,14 @@ const getInfo = async() => {
 };
 getInfo()
 // cleanList() it works don't uncomment
+
+
+const deletePost = async (id) => {
+    const url = URL_API;
+    const deleted = await fetch(URL_API + id + '.json',{
+    method: 'DELETE',
+    });
+    if(deleted.status === 200){
+    getInfo();
+ }
+}

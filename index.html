@@ -56,10 +56,12 @@
                 placeholder="  Search..."
                 aria-label="Search"
                 aria-label="btnGroup"
+                id="searchQueriesContent"
               />
               <button
                 class="search-icon__button action-nav-icon__button"
-                type="submit"
+                type="button"
+                id="searchButton"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -103,6 +105,7 @@
           </button>
           <button
             type="button"
+            id="create_post_button"
             class="create-post__button action-create-post__button btn-outline-primary d-none d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"
           >
             Create Post
@@ -315,7 +318,12 @@
           </div>
 
         </div>
-        <div class="card-body">
+        <!--Card Body Start-->
+        <!--Card Body Start-->
+        <!--Card Body Start-->
+        <!--Card Body Start-->
+        <div id="cards-container">
+        <!-- <div class="card-body" id="card-body--container">
           <div class="card mb-3" id="resumen">
             <a href="./Post/indexPs.html" id="enlace">
               <img
@@ -336,7 +344,7 @@
 
                 <div class="card__top-info">
                   <ul class="card__top-list list-unstyled">
-                    <li class="card__top-name"><strong>Srikanth</strong> for <strong>svemaraju.github.io</strong></li>
+                    <li class="card__top-name"><p id="card_top_p"><strong id="strong_name">Srikanth</strong> for <strong id="strong_teamName">svemaraju.github.io</strong></p></li>
                     <li class="card__top-date">Aug 3 (5 days ago)</li>
                   </ul>
 
@@ -348,7 +356,7 @@
 
 
               <ul class="card__tags d-flex flex-wrap list-unstyled">
-                <li class="card__tag me-2"><a href="#" class="text-decoration-none card__tag-color">#programming</a>
+                <li class="card__tag me-2"><a id="card_tag_link" href="#" class="text-decoration-none card__tag-color">#programming</a>
                 </li>
                 <li class="card__tag me-2"><a href="#" class="text-decoration-none card__tag-color">#webdev</a></li>
                 <li class="card__tag me-2"><a href="#" class="text-decoration-none card__tag-color">#python</a></li>
@@ -377,20 +385,21 @@
                 </ul>
 
                 <ul class="card__coments d-flex flex-wrap list-unstyled">
-                  <li class="card__coment-icon"><img src="./Images/coments.svg" alt=""></li>
+                  <li class="card__coment-icon"><img id="card_comment_icon_img" src="./Images/coments.svg" alt=""></li>
                   <li class="card__coment-number">5</li>
                   <li class="card__coment-text d-none d-md-block mx-2">Comments</li>
                 </ul>
 
                 <ul class="card__read-save d-flex flex-wrap list-unstyled">
-                  <li class="card__read"><small class="text-body-secondary">4 min read</small></li>
-                  <li class="card__save"><img src="./Images/save-post.svg" alt=""></li>
+                  <li class="card__read"><small id="small_card_read" class="text-body-secondary">4 min read</small></li>
+                  <li class="card__save"><img id="card_save_img" src="./Images/save-post.svg" alt=""></li>
                 </ul>
               </div>
 
             </div>
           </div>
         </div>
+
 
         <div class="card-body">
           <div class="card mb-3" id="resumen">
@@ -462,6 +471,7 @@
             </div>
           </div>
         </div>
+      
 
         <div class="card-body">
           <div class="card mb-3" id="resumen">
@@ -605,7 +615,8 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
+      </div>
       </main>
       <!-----------------aside2b-------------------->
       <aside class="d-none col-3 d-lg-block d-xl-block mt-5">
@@ -695,5 +706,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
