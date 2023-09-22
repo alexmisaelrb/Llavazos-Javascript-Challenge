@@ -4,6 +4,8 @@ const INPUT_USER = document.querySelector('#input-user');
 const INPUT_IMAGE = document.querySelector('#input-image-user');
 const SEND_COMMENT_BUTTON = document.querySelector('#send-comment');
 const ALL_COMMENTS_BUTTON = document.querySelector('#all-comments');
+const ICON_COMMENTS = document.querySelector('#icon-comments');
+const TOTAL_COMMENTS = document.querySelector('#total-comments');
 const URL_FIREBASE_COMMENTS = "https://desafiojs-147da-default-rtdb.firebaseio.com/"+ID_POST+"/Comentarios.json";
 let comentarios = [];
 
@@ -32,10 +34,15 @@ ALL_COMMENTS_BUTTON.addEventListener('click',(e) => {
     e.target.style.display = 'none';
 });
 
+ICON_COMMENTS.addEventListener('click',() => {
+    containerComments.scrollIntoView({behavior: 'smooth'});
+});
+
 const getComments = async() => {
     try{
         const response = await fetch(URL_FIREBASE_COMMENTS, {method:'GET'});
         comentarios = await response.json();
+        TOTAL_COMMENTS.textContent = comentarios.length;
         renderComments(comentarios);
     } catch(error){
         console.log(error);
