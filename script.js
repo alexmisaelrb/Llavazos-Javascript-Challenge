@@ -55,7 +55,6 @@ const renderPost = (infoPost, index) => {
     card_top_date.textContent = infoPost.datePost;
 
     const card_title_link = document.createElement('a');
-    //card_title_link.href = './Post/indexPs.html';
     card_title_link.className = 'card-title-link text-decoration-none';
     const card_title = document.createElement('h2');
     card_title.className = 'card-title';
@@ -129,10 +128,9 @@ const renderPost = (infoPost, index) => {
   
 
     card_title_link.addEventListener('click',(event) => {
-        //Aqui va la URL para redireccionamiento
-        //const elementToEdit = event.target.dataset.persona;
+    
         window.location.href = '/Llavazos-Javascript-Challenge/Post/indexPs.html?id=' + infoPost.id;
-        // + elementToEdit;
+
     });
 
     cardsContainer.appendChild(card_body);
@@ -191,7 +189,6 @@ const renderPost = (infoPost, index) => {
 }
 
 searchButton.addEventListener('click', (event) =>{
-    console.log('Hola')
     let elementToFind = searchQueriesContent.value;
     window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
 
@@ -202,28 +199,20 @@ create_post_button.addEventListener('click', () => {
 
 })
 
-// renderPost();
-// renderPost();
-// renderPost();
-// renderPost();
-
-
-//Sample to render post
 const renderPostList = (listToRender) => {
     listToRender.forEach(( post, index ) => {
-        console.log(post.teamName)
         renderPost(post, index);
     });
 };
 
-//Sample clean list
+
 const cleanList = () => {
     while(cardsContainer.firstChild) {
         cardsContainer.removeChild(cardsContainer.firstChild)
     };
 };
 
-//function to play with the data
+
 const parserResponseFireBase = (response) => {
     const parsedResponse = []
         for(const key in response ){
@@ -240,12 +229,12 @@ const parserResponseFireBase = (response) => {
                 comentarios: response[key].Comentarios,
             };
             parsedResponse.push(element)
-            
+
         };
     return parsedResponse;
 };
 
-//sample to get the details from firebase
+
 const getInfo = async() => {
     try {
         const url = URL_API + '.json'
@@ -255,7 +244,7 @@ const getInfo = async() => {
             const responseParsed = parserResponseFireBase(parsed);
             cleanList();
             renderPostList(responseParsed)
-            //console.log(responseParsed)
+
         }
 
     } catch (error) {
@@ -263,4 +252,3 @@ const getInfo = async() => {
     }
 };
 getInfo()
-// cleanList() it works don't uncomment
