@@ -159,7 +159,7 @@ const renderPost = (infoPost, index) => {
         // + elementToEdit;
     });
 
-    //Delete listener
+    ////Delete listener
     button_card_delete.addEventListener('click', (event)=>{
         const elemetToRemove = event.target.dataset.post.id
         delete(elemetToRemove)
