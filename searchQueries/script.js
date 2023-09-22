@@ -155,7 +155,7 @@ const renderPost = (infoPost, index) => {
     card_title_link.addEventListener('click',(event) => {
         //Aqui va la URL para redireccionamiento
         //const elementToEdit = event.target.dataset.persona;
-        window.location.href = 'http://google.com' 
+        window.location.href = '/Llavazos-Javascript-Challenge/Post/indexPs.html?id=' + infoPost.id;
         // + elementToEdit;
     });
 
