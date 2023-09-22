@@ -177,22 +177,17 @@
         <!-- ---------------Inicia Aside Izquierdo Section B--------------- -->
       </aside>
 
-      <main class="post__container col-12 col-md-9 col-lg-7 mt-5">
+      <main class="post__container col-12 col-md-9 col-lg-7 mt-5">               
         <div class="card">
-          <img
-            src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fres.cloudinary.com%2Fpracticaldev%2Fimage%2Ffetch%2Fs--1SWy2Lm6--%2Fc_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_500%2Cq_auto%2Cw_1000%2Fhttps%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhe9jeudt1gebya1cahz3.jpg"
-            class="card-img-top" alt="..." />
+          <img class="card-img-top" alt="..." id="image-post"/>
           <div class="card-body">
             <div class="partners__container">
               <div class="partners__container-invisible">
-                <div class="circle"></div>
+                <div class="circle" id="user-image"></div>
               </div>
-              <p class="partners__container-text">Srikanth</p>
-              <p class="partners__container-text">Posted on 3 ago • Originally published at <a
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">svemaraju.github.io</a>.</p>
+              <p class="partners__container-text" id="user-name"></p>
+              <p class="partners__container-text" id="date-post"></p>
             </div>
-
-
             <div class="reactions_box_2 ">
               <div class="reactions_box-raw-2 d-flex">
                 <div class="div-imagen_and_text">
@@ -216,70 +211,25 @@
                   <span>5</span>
                 </div>
               </div>
-
             </div>
-
-            <h4 class="card-title in_card_title">
-              Start by writing messy code
+            <h4 class="card-title in_card_title" id="title-post">              
             </h4>
-            <ul class="card__tags d-flex flex-wrap list-unstyled">
-              <li class="card__tag me-2">#programming</li>
-              <li class="card__tag me-2">#webdev</li>
-              <li class="card__tag me-2">#phyton</li>
-              <li class="card__tag me-2">#career</li>
+            <ul class="card__tags d-flex flex-wrap list-unstyled" id="tags-post">     
+
             </ul>
             <div class="reactions__container d-flex">
               <article class="me-3">
                 <span class="d-none">111</span>
                 <span class="d-none">Reactions</span>
               </article>
-              <article class="me-3">
-                <p>The conventional wisdom in software engineering advocates for breaking down code into loosely coupled
-                  functions, classes, and modules, among other things. Numerous books and blog posts discuss various
-                  approaches that help us achieve the best possible design for our code.</p>
-                <p>Sometimes, we may get lucky and find a design pattern that perfectly matches our business logic.
-                  However, there's a risk of making premature assumptions, which can result in our code being misaligned
-                  with the business problem.</p>
-                <p>I propose an alternate approach that may sound counterintuitive.</p>
-                <p>Start by writing messy code—-messy code that diverges from the traditional "clean" code, following
-                  design patterns, programming paradigms, or any opinionated design methodologies.</p>
-                <h4>What do I mean by messy code here?</h4>
-                <p>I begin by putting all my code in a single function (or method). This means disregarding principles
-                  like Separation of Concerns, Single Responsibility Principle, or even DRY (Don't Repeat Yourself).</p>
-                <p>Then, I write tests to verify that my code works.</p>
-                <p>At this point, I am technically ready to open a Pull Request, meaning somebody will need to read my
-                  code and review it. This is when I check my code for readability.</p>
-                <p>Based on my experience, having as much context available in one place makes code more readable. When
-                  I have a function with all the code in it, I have all the context I need to inform my design. If I
-                  feel the code is unreadable, I break the large function into meaningful blocks. On the contrary,
-                  figuring out the building blocks from scratch would take me much longer.</p>
-                <p>Having all the code in one place can be considered messy, but it is much more malleable than having
-                  code implemented in mismatched design pattern.</p>
-                <h4>What about working with existing codebase?</h4>
-                <p>An existing codebase may have predefined patterns. But that doesn't mean they should be unchangeable.
-                  As described above, these patterns may be a perfect fit. In that case we use them to inform the design
-                  of new features. But if they aren't, there is no reason why we should stick to them for all future
-                  code.</p>
-                <p>If all future implementation is dictated by initial design decisions, then it means that our software
-                  is hard to change. Muerte al capitalismo. Software is supposed to be "soft" i.e. easy to change, and
-                  change is a good indicator of a healthy and successful software project.</p>
-                <h4>How did I arrive here?</h4>
-                <p>My fascination with architectural patterns and design methodologies began early in my career.
-                  Initially, I felt embarrassed by my code, which worked perfectly but lacked the elegance of a
-                  well-designed system. To address this, I immersed myself in studying design patterns, only to later
-                  realize that many of these patterns were primarily designed for Object-Oriented Programming. As I
-                  continued to develop my coding skills in Python, a more flexible language, I learned the importance of
-                  seeking design patterns native to Python.</p>
-                <p>Over time, I also encountered counterarguments such as WET (Write Everything Twice) versus DRY (Don't
-                  Repeat Yourself), which expanded my perspective on coding.</p>
-                <p>Given the abundance of strongly worded literature in the software industry, it is easy to become too
-                  fixated on the means of accomplishing our tasks and lose sight of our ultimate goals. Therefore, I
-                  find it valuable to approach coding from a first principles perspective—breaking down a problem into
-                  its fundamental elements and rebuilding a solution from those elements. Starting with messy code
-                  represents my personal approach to this philosophy, and I encourage you to find your unique path in
-                  coding as well.</p>
-                <span class="d-none">Comments</span>
-              </article>
+              <article class="me-3" id="content-post">                
+              </article>              
+            </div>
+            <div class="action__buttons">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-outline-primary me-md-2" type="button" id="edit-post">Edit</button>
+                <button class="btn btn-outline-danger" type="button" id="delete-post">Delete</button>
+              </div>
             </div>
           </div>
         </div>
@@ -290,29 +240,35 @@
               <button class="button-subscribe">Subscribe</button>
             </div>
             <div class="container_space"></div>
-            <div class="input-group flex-nowrap">
-              <span class="input-group-text" id="addon-wrapping">
-                <div class="circle-2"></div>
-              </span>
-              <input type="text" class="form-control" placeholder="Únete a la conversación" aria-label="Username"
-                aria-describedby="addon-wrapping">
-            </div>
-            <div class="container_space"></div>
 
-            <div class="container_space"></div>
             <div class="comments">
               <div class="profile_picture">
-                <div class="circle-3"></div>
+                
               </div>
-              <div class="comment_box">
-                <p>Aaron Paul</p>
-                <p>As for WET. Totally agree. Write it once. If you have to write it again, grit your teeth and JFDI.
-                  The third time indicates this is a common pattern and needs to be abstracted.</p>
-                <p>Saludos a toda la bandera</p>
+              <div class="comment_box" style="border: none; width: 100%;">
+                <textarea class="form-control" placeholder="Add to the discussion" rows="3" id="comment"></textarea>
+                <div id="e-comment" class="invalid-feedback">
+                  Please enter a comment
+                </div>
+                <div class="container_space"></div>
+                <input type="text" class="form-control" id="input-user" placeholder="Nombre del Usuario">
+                <div id="e-input-user" class="invalid-feedback">
+                  Please enter a username
+                </div>
+                <div class="container_space"></div>
+                <input type="text" class="form-control" id="input-image-user" placeholder="URL de la Imagen del Usuario">
+                <div id="e-input-image-user" class="invalid-feedback">
+                  Please enter the user's avatar URL
+                </div>
               </div>
             </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
+              <button class="btn btn-primary me-md-2" type="button" id="send-comment">Submit</button>
+            </div>
             <div class="container_space"></div>
-            <button class="button-subscribe-view">View all comments</button>
+            <div class="container__comments" id="container-comments">
+            </div>
+            <button class="button-subscribe-view" id="all-comments">View all comments</button>
 
           </div>
         </div>
@@ -342,15 +298,15 @@
 
       <aside class="AsideRigth-post__container col-3 d-none d-lg-block p-0 mt-5">
         <div class="Photo__Container card">
-          <div class="card-header bg-secondary" style="height: 35px"></div>
+          <div class="card-header bg-secondary"></div>
           <div class="card-body text-center">
             <div class="photo-perfil__container row g-0 position-absolute top-0 start-10 mt-3" style="max-height: 45px">
-              <div class="col-md-4">
-                <img src="./mediaPs/SriKanth.webp" class="img-fluid rounded-circle" style="height: 80%" alt="..." />
+              <div class="col-md-4" style="width: 10%;">
+                <img src="./mediaPs/SriKanth.webp" class="img-fluid rounded-circle" alt="..." id="user-image-title"/>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title mt-2 text-start">Srikanth</h5>
+                  <h5 class="card-title mt-2 text-start" id="user-title">Srikanth</h5>
                 </div>
               </div>
             </div>
@@ -387,7 +343,7 @@
 
         <div class="More-from__Container card mt-3">
           <div class="more-head card-header fw-bolder">
-            More from <a href="https://dev.to/svemaraju" class="">Srikanth</a>
+            More from <a href="https://dev.to/svemaraju" class=""><label id="user-name-profile">Srikanth</label></a>
           </div>
           <ul class="posts__container list-group list-group-flush">
             <li class="first-post list-group-item">
@@ -520,7 +476,8 @@
     </div>
   </div>
 
-
+  <script src="script.js"></script>
+  <script src="comments.js"></script>
 </body>
 
 </html>
