@@ -15,12 +15,11 @@ const inputTeamName = document.querySelector('#teamName')
 const inputCoverImage = document.querySelector('#coverImg')
 const inputPostContent = document.querySelector('#postContTxt')
 const inputTags= document.querySelector('#tagTxt')
-
+let posts;
 
 const createPost = async() => {
     
     let fechaActual = new Date();
-    
     const post = {
         Title: inputTitle.value,
         Contenido: inputPostContent.value,
@@ -34,10 +33,12 @@ const createPost = async() => {
         }
     }
 
+    posts.push(post);
+
     const url = URL_FIREBASE + '.json';
     const response = await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(post)
+        method: 'PUT',
+        body: JSON.stringify(posts)
     })
     if(response.status === 200){
         window.location.href = '/index.html';
@@ -47,3 +48,40 @@ const createPost = async() => {
 buttonPublish.addEventListener('click', () => {
     createPost()
 });
+
+const getInfo = async() => {
+    try {
+        const url = URL_FIREBASE + '.json'
+        const response = await fetch(url);
+        if(response.status !== 201){
+            const parsed = await response.json();
+            posts = parsed;
+        }
+
+    } catch (error) {
+        console.error(error, 'xxxx')
+    }
+};
+
+const parserResponseFireBase = (response) => {
+    const parsedResponse = []
+        for(const key in response ){
+            const element = {
+                id: key,
+                contenido: response[key].Contenido,
+                datePost: response[key].DatePost,
+                teamName: response[key].TeamName,
+                image: response[key].Image,
+                timeRead: response[key].TimeRead,
+                user: response[key].User,
+                title: response[key].Title,
+                tags: response[key].Tags,
+                comentarios: response[key].Comentarios,
+            };
+            parsedResponse.push(element)
+            
+        };
+    return parsedResponse;
+};
+
+getInfo()
