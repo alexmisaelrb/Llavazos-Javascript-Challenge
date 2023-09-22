@@ -154,7 +154,6 @@
   border-radius: 50px;
   margin: 5px;
   border: 1px solid white;
-  background-image: url(/Images/profile_picture.JPG);
 }
 
 .reactions_box_2 {
@@ -245,6 +244,7 @@
   border: 2px solid rgb(214, 211, 211);
   border-radius: 10px;
   padding: 10px;
+  width: 100%;
 }
 
 view {
@@ -318,4 +318,13 @@ view {
   text-align: center;
   transition: background-color 0.3s, border-color 0.3s;
   width: 100%;
+}
+
+.comment__autor {
+  font-weight: bold;
+}
+
+.comment__date {
+  font-size: 0.875rem;
+  color: #717171;
 }/*# sourceMappingURL=aside_post.css.map */

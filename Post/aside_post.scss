@@ -138,8 +138,7 @@
   background-size: contain;
   border-radius: 50px;
   margin: 5px;
-  border: 1px solid white;
-  background-image: url(/Images/profile_picture.JPG);
+  border: 1px solid white;  
 }
 .reactions_box_2 {
   width: 400px;
@@ -218,6 +217,7 @@
   border: 2px solid rgb(214, 211, 211);
   border-radius: 10px;
   padding: 10px;
+  width: 100%;
 }
 view {
   width: 100%;
@@ -285,4 +285,13 @@ view {
   transition: background-color 0.3s, border-color 0.3s;
   width: 100%;
   
+}
+
+.comment__autor {
+  font-weight: bold;
+}
+
+.comment__date {
+  font-size: 0.875rem;
+  color: #717171;
 }
