@@ -4,7 +4,7 @@ const search = window.location.search;
 
 const url = new URLSearchParams(search);
 let string = url.get('string');
-console.log(string)
+
 
 const searchQueries = document.querySelector('#searchQueries');
 const cardsContainer = document.querySelector('#cards-container');
@@ -62,7 +62,7 @@ const renderPost = (infoPost, index) => {
     card_top_date.textContent = infoPost.datePost;
 
     const card_title_link = document.createElement('a');
-    //card_title_link.href = './Post/indexPs.html';
+
     card_title_link.className = 'card-title-link text-decoration-none';
     const card_title = document.createElement('h2');
     card_title.className = 'card-title';
@@ -150,7 +150,7 @@ const renderPost = (infoPost, index) => {
     card_save_img.id = 'card_save_img';
     card_save_img.src = '../Images/save-post.svg'
     
-    console.log(`Search result for ${string}`)
+
 
     card_title_link.addEventListener('click',(event) => {
         //Aqui va la URL para redireccionamiento
@@ -220,40 +220,26 @@ const renderPost = (infoPost, index) => {
     card_read_save.appendChild(card_save);
     card_save.appendChild(card_save_img);
 
-    //Search
-    // searchQueries.append(searchQueriesContent.value)
+
 }
 
 searchQueries.textContent = `Search result for ${string}`
 
-// searchButton.addEventListener('click', (event) =>{
-//     console.log('Hola')
-//     let elementToFind = searchQueriesContent.value;
-//     window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
-// })
-
-// renderPost();
-// renderPost();
-// renderPost();
-// renderPost();
-//const postFiltered =  parsed.filter(post => post.Title === string || post.Content === string)
-
-//Sample to render post
 const renderPostList = (listToRender) => {
     listToRender.forEach(( post, index ) => {
-        console.log(post.teamName)
+
         renderPost(post, index);
     });
 };
 
-//Sample clean list
+
 const cleanList = () => {
     while(cardsContainer.firstChild) {
         cardsContainer.removeChild(cardsContainer.firstChild)
     };
 };
 
-//function to play with the data
+
 const parserResponseFireBase = (response) => {
     const parsedResponse = []
         for(const key in response ){
@@ -277,7 +263,6 @@ const parserResponseFireBase = (response) => {
 
 
 searchButton.addEventListener('click', (event) =>{
-    console.log('Hola')
     let elementToFind = searchQueriesContent.value;
     window.location.href = '/Llavazos-Javascript-Challenge/searchQueries/?string=' + elementToFind;
 
@@ -290,7 +275,7 @@ create_post_button.addEventListener('click', () => {
 })
 
 
-//sample to get the details from firebase
+
 const getInfo = async() => {
     try {
         const url = URL_API + '.json'
@@ -302,7 +287,6 @@ const getInfo = async() => {
             cleanList();
 
             renderPostList(responseParsedSearch)
-            //console.log(responseParsed)
         }
 
     } catch (error) {
@@ -310,7 +294,7 @@ const getInfo = async() => {
     }
 };
 getInfo()
-// cleanList() it works don't uncomment
+
 
 
 const deletePost = async (id) => {
