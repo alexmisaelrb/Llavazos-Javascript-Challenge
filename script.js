@@ -109,7 +109,7 @@ const renderPost = (infoPost, index) => {
     card_comment_icon_img.src = './Images/coments.svg';
     const card_coment_number = document.createElement('li')
     card_coment_number.className = 'card__coment-number';
-    card_coment_number.textContent = infoPost.comentarios.length;
+    card_coment_number.textContent = infoPost.comentarios==undefined?0:infoPost.comentarios.length;
     const card_coment_text = document.createElement('li');
     card_coment_text.className = 'card__coment-text d-none d-md-block mx-2';
     card_coment_text.textContent = 'Comments';
@@ -131,7 +131,7 @@ const renderPost = (infoPost, index) => {
     card_title_link.addEventListener('click',(event) => {
         //Aqui va la URL para redireccionamiento
         //const elementToEdit = event.target.dataset.persona;
-        window.location.href = 'http://google.com' 
+        window.location.href = '/Llavazos-Javascript-Challenge/Post/indexPs.html?id=' + infoPost.id;
         // + elementToEdit;
     });
 
