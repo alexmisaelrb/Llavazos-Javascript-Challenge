@@ -149,7 +149,8 @@ const renderPost = (infoPost, index) => {
     const card_save_img = document.createElement('img');
     card_save_img.id = 'card_save_img';
     card_save_img.src = '../Images/save-post.svg'
-    searchQueries.textContent = `Search result for ${string}`
+    
+    console.log(`Search result for ${string}`)
 
     card_title_link.addEventListener('click',(event) => {
         //Aqui va la URL para redireccionamiento
@@ -159,8 +160,9 @@ const renderPost = (infoPost, index) => {
     });
 
     //Delete listener
-    button_card_delete.addEventListener('click', ()=>{
-        alert('hola')
+    button_card_delete.addEventListener('click', (event)=>{
+        const elemetToRemove = event.target.dataset.post.id
+        delete(elemetToRemove)
     })
 
     cardsContainer.appendChild(card_body);
@@ -221,6 +223,8 @@ const renderPost = (infoPost, index) => {
     //Search
     // searchQueries.append(searchQueriesContent.value)
 }
+
+searchQueries.textContent = `Search result for ${string}`
 
 // searchButton.addEventListener('click', (event) =>{
 //     console.log('Hola')
@@ -307,3 +311,14 @@ const getInfo = async() => {
 };
 getInfo()
 // cleanList() it works don't uncomment
+
+
+const deletePost = async (id) => {
+    const url = URL_API;
+    const deleted = await fetch(URL_API + id + '.json',{
+    method: 'DELETE',
+    });
+    if(deleted.status === 200){
+    getInfo();
+ }
+}
