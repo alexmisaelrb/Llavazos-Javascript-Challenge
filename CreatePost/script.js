@@ -26,7 +26,7 @@ const createPost = async() => {
         TeamName: inputTeamName.value,
         Image: inputCoverImage.value,
         Tags: inputTags.value.split(','),
-        Date: '22/09/2023',//fechaActual.format('DD/MM/YYYY'),
+        Date: '22/09/2023', //fechaActual.format('DD/MM/YYYY'),
         TimeRead: 3,
         User: {
             Name: inputUsuario.value,
@@ -42,7 +42,7 @@ const createPost = async() => {
         body: JSON.stringify(posts)
     })
     if(response.status === 200){
-        window.location.href = '/index.html';
+        window.location.href = '../index.html';
     }
 }
 
