@@ -27,6 +27,7 @@ const createPost = async() => {
         Image: inputCoverImage.value,
         Tags: inputTags.value.split(','),
         Date: '22/09/2023',//fechaActual.format('DD/MM/YYYY'),
+        TimeRead: 3,
         User: {
             Name: inputUsuario.value,
             URL: inputURLavatar.value,
