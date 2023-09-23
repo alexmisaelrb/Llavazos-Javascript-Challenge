@@ -29,7 +29,7 @@ DELETE_BUTTON.addEventListener('click',() => {
 
 SEARCH_BUTTON.addEventListener('click', (event) =>{
     let elementToFind = SEARCH_QUERIES_CONTENT.value;
-    window.location.href = '/searchQueries/?string=' + elementToFind;
+    window.location.href = '../searchQueries/?string=' + elementToFind;
 
 })
 
@@ -80,7 +80,7 @@ const deletePost = async () => {
         method: 'DELETE'
     });
     if(response.status === 200){
-        window.location.href = '/index.html';
+        window.location.href = '../index.html';
     }else{
         alert('Se presento un error al intentar eliminar el post');
     }

@@ -1,488 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title-page">Start by writing messy code-DEV Community</title>
+    <link rel="shortcut icon" href="./mediaPs/icon_dev.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./stylesPs.css" />
+    <link rel="stylesheet" href="../Styles/nav-style.css" />
+    <link rel="stylesheet" href="./aside_post.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="title-page">Start by writing messy code-DEV Community</title>
-  <link rel="shortcut icon" href="./mediaPs/icon_dev.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-  <link rel="stylesheet" href="" />
-  <link rel="stylesheet" href="./stylesPs.css">
-  <link rel="stylesheet" href="../Styles/nav-style.css">
-  <link rel="stylesheet" href="./aside_post.css">
+    <!-- bootstrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <!-- bootstrap script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar fixed-top container-fluid bg-body-tertiary d-flex flex-column">
-      <!-- ------------LEFT NAV PART ------------ -->
-      <div class="container-fluid d-flex px-5">
-  
-        <section class="left-navbar__section d-flex justify-content-start">
-          <img class="btn burguer__aside__off d-md-none" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" src="../Images/svg0.svg" alt="Menú">
-
-          <button class="home-logo__button border-0 bg-transparent">
-            <a href="../index.html"><img
-              class="rounded"
-              src="../Images/icon_dev.png"
-              alt="Dev To"
-              height="38px"
-              width="45px"
-            /></a>
-          </button>
-
-          <div
-            class="navbar-search__container bg-white border border-secondary-emphasis rounded d-none d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"
-          >
-            <form class="d-flex" role="search">
-              <input
-                type="text"
-                class="search-form-control me-2 border-0"
-                placeholder="  Search..."
-                aria-label="Search"
-                aria-label="btnGroup"
-                id="searchQueriesContent"
-              />
-              <button
-                class="search-icon__button action-nav-icon__button"
-                type="button"
-                id="searchButton"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  role="img"
-                  aria-labelledby="a5ckntzcr0le9czo6j8bpf7av1sfpy5c"
-                  class="search-icon"
-                >
-                  <title id="a5ckntzcr0le9czo6j8bpf7av1sfpy5c">Search</title>
-                  <path
-                    d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
-                  ></path>
-                </svg>
-              </button>
-            </form>
-          </div>
-        </section>
-
-        <!-- ------------RIGHT NAV PART ------------ -->
-
-        <section
-          class="right-navbar__section flex-d flex-column justify-content-start"
-        >
-          <button
-            class="search-icon-right__button action-nav-icon__button border-0 d-sm-inline d-md-none d-lg-none d-xl-none d-xxl-none"
-            type="submit"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              role="img"
-              aria-labelledby="a5ckntzcr0le9czo6j8bpf7av1sfpy5c"
-              class="search-icon"
-            >
-              <!--action-notification__icon-->
-              <title id="a5ckntzcr0le9czo6j8bpf7av1sfpy5c">Search</title>
-              <path
-                d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
-              ></path>
-            </svg>
-          </button>
-          <button
-            type="button"
-            id="create_post_button"
-            class="create-post__button action-create-post__button btn-outline-primary d-none d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"
-          >
-            Create Post
-          </button>
-          <button
-            class="notification-icon__button action-nav-icon__button"
-            type="submit"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              role="img"
-              aria-labelledby="ailt444i8ov0hrk8hwcfn8t1zbztk86r"
-              class="notification-icon"
-            >
-              <title id="ailt444i8ov0hrk8hwcfn8t1zbztk86r">
-                Notifications
-              </title>
-              <path
-                d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"
-              ></path>
-            </svg>
-          </button>
-          <button class="profile-image__button" type="submit">
+  <body>
+    <header>
+      <nav
+        class="navbar fixed-top container-fluid bg-body-tertiary d-flex flex-column"
+      >
+        <!-- ------------LEFT NAV PART ------------ -->
+        <div class="container-fluid d-flex px-5">
+          <section class="left-navbar__section d-flex justify-content-start">
             <img
-              src="../Images/profile-image.jpg"
-              alt="profile-image"
-              class="profile-picture__image action-profile-picture__image rounded-circle"
-              width="35px"
-              height="35px"
+              class="btn burguer__aside__off d-md-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasScrolling"
+              aria-controls="offcanvasScrolling"
+              src="../Images/svg0.svg"
+              alt="Menú"
             />
-          </button>
-        </section>
-      </div>
-    </nav>
-  </header>
 
-  <div class="container-fluid mt-3">
-    <div class="row">
-      <aside class="col-1 d-none d-md-block min-vh-100 d-flex align-items-center align-items-center mt-5">
-        <!-- ---------------Inicia Aside Izquierdo Section B---------------   -->
-        <div class="list-group mt-3 d-flex align-items-center align-items-center container_interactions">
-          <div class="aside_social_reactions">
-            <div class="space__container-aside"></div>
-            <div class="hover_white_heart">
-              <img src="/Images/heart_1076984.png" alt="" class="icon_white-heart-invisible">
-              <img src="/Images/heart_1077035.png" alt="" class="icon_white-heart">
-              <p>46</p>
-              <!--Aqui va-->
-              <div class="aside_social_reactions-heart">
-                <div class="reactions_box">
-                  <div class="reactions_box-raw">
-                    <img src="/Images/svg20.svg" alt="" class="imagen__reactions">
-                    <img src="/Images/svg21.svg" alt="" class="imagen__reactions">
-                    <img src="/Images/svg22.svg" alt="" class="imagen__reactions">
-                    <img src="/Images/svg23.svg" alt="" class="imagen__reactions">
-                    <img src="/Images/svg24.svg" alt="" class="imagen__reactions">
-                  </div>
-                  <div class="reactions_box-raw">
-                    <p class="reactions_box-text">33</p>
-                    <p class="reactions_box-text">3</p>
-                    <p class="reactions_box-text">2</p>
-                    <p class="reactions_box-text">3</p>
-                    <p class="reactions_box-text">5</p>
-                  </div>
-                </div>
+            <button class="home-logo__button border-0 bg-transparent">
+              <a href="../index.html"
+                ><img
+                  class="rounded"
+                  src="../Images/icon_dev.png"
+                  alt="Dev To"
+                  height="38px"
+                  width="45px"
+              /></a>
+            </button>
 
-
-                <!--Aqui acaba-->
-              </div>
-
+            <div
+              class="navbar-search__container bg-white border border-secondary-emphasis rounded d-none d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"
+            >
+              <form class="d-flex" role="search">
+                <input
+                  type="text"
+                  class="search-form-control me-2 border-0"
+                  placeholder="  Search..."
+                  aria-label="Search"
+                  aria-label="btnGroup"
+                  id="searchQueriesContent"
+                />
+                <button
+                  class="search-icon__button action-nav-icon__button"
+                  type="button"
+                  id="searchButton"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    role="img"
+                    aria-labelledby="a5ckntzcr0le9czo6j8bpf7av1sfpy5c"
+                    class="search-icon"
+                  >
+                    <title id="a5ckntzcr0le9czo6j8bpf7av1sfpy5c">Search</title>
+                    <path
+                      d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
+                    ></path>
+                  </svg>
+                </button>
+              </form>
             </div>
-            <div id="icon-comments">
-              <img src="/Images/chat-bubble_3114810.png" alt="" class="icon_white">
-              <p id="total-comments"></p>
-            </div>
-            <img src="/Images/save-white.png" alt="" class="icon_white">
-            <p>27</p>
-          </div>
+          </section>
+
+          <!-- ------------RIGHT NAV PART ------------ -->
+
+          <section
+            class="right-navbar__section flex-d flex-column justify-content-start"
+          >
+            <button
+              class="search-icon-right__button action-nav-icon__button border-0 d-sm-inline d-md-none d-lg-none d-xl-none d-xxl-none"
+              type="submit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-labelledby="a5ckntzcr0le9czo6j8bpf7av1sfpy5c"
+                class="search-icon"
+              >
+                <!--action-notification__icon-->
+                <title id="a5ckntzcr0le9czo6j8bpf7av1sfpy5c">Search</title>
+                <path
+                  d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              type="button"
+              id="create_post_button"
+              class="create-post__button action-create-post__button btn-outline-primary d-none d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline"
+            >
+              Create Post
+            </button>
+            <button
+              class="notification-icon__button action-nav-icon__button"
+              type="submit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-labelledby="ailt444i8ov0hrk8hwcfn8t1zbztk86r"
+                class="notification-icon"
+              >
+                <title id="ailt444i8ov0hrk8hwcfn8t1zbztk86r">
+                  Notifications
+                </title>
+                <path
+                  d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"
+                ></path>
+              </svg>
+            </button>
+            <button class="profile-image__button" type="submit">
+              <img
+                src="../Images/profile-image.jpg"
+                alt="profile-image"
+                class="profile-picture__image action-profile-picture__image rounded-circle"
+                width="35px"
+                height="35px"
+              />
+            </button>
+          </section>
         </div>
-        <!-- ---------------Inicia Aside Izquierdo Section B--------------- -->
-      </aside>
+      </nav>
+    </header>
 
-      <main class="post__container col-12 col-md-9 col-lg-7 mt-5">               
-        <div class="card">
-          <img class="card-img-top" alt="..." id="image-post"/>
-          <div class="card-body">
-            <div class="partners__container">
-              <div class="partners__container-invisible">
-                <div class="circle" id="user-image"></div>
-              </div>
-              <p class="partners__container-text" id="user-name"></p>
-              <p class="partners__container-text" id="date-post"></p>
-            </div>
-            <div class="reactions_box_2 ">
-              <div class="reactions_box-raw-2 d-flex">
-                <div class="div-imagen_and_text">
-                  <img src="/Images/svg20.svg" alt="" class="imagen__reactions">
-                  <span>33</span>
-                </div>
-                <div class="div-imagen_and_text">
-                  <img src="/Images/svg21.svg" alt="" class="imagen__reactions">
-                  <span>3</span>
-                </div>
-                <div class="div-imagen_and_text">
-                  <img src="/Images/svg22.svg" alt="" class="imagen__reactions">
-                  <span>2</span>
-                </div>
-                <div class="div-imagen_and_text">
-                  <img src="/Images/svg23.svg" alt="" class="imagen__reactions">
-                  <span>3</span>
-                </div>
-                <div class="div-imagen_and_text">
-                  <img src="/Images/svg24.svg" alt="" class="imagen__reactions">
-                  <span>5</span>
-                </div>
-              </div>
-            </div>
-            <h4 class="card-title in_card_title" id="title-post">              
-            </h4>
-            <ul class="card__tags d-flex flex-wrap list-unstyled" id="tags-post">     
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <aside
+          class="col-1 d-none d-md-block min-vh-100 d-flex align-items-center align-items-center mt-5"
+        >
+          <!-- ---------------Inicia Aside Izquierdo Section B---------------   -->
+          <div
+            class="list-group mt-3 d-flex align-items-center align-items-center container_interactions"
+          >
+            <div class="aside_social_reactions">
+              <div class="space__container-aside"></div>
+              <div class="hover_white_heart">
+                <img
+                  src="../Images/heart_1076984.png"
+                  alt=""
+                  class="icon_white-heart-invisible"
+                />
+                <img
+                  src="../Images/heart_1077035.png"
+                  alt=""
+                  class="icon_white-heart"
+                />
+                <p>46</p>
+                <!--Aqui va-->
+                <div class="aside_social_reactions-heart">
+                  <div class="reactions_box">
+                    <div class="reactions_box-raw">
+                      <img
+                        src="../Images/svg20.svg"
+                        alt=""
+                        class="imagen__reactions"
+                      />
+                      <img
+                        src="../Images/svg21.svg"
+                        alt=""
+                        class="imagen__reactions"
+                      />
+                      <img
+                        src="../Images/svg22.svg"
+                        alt=""
+                        class="imagen__reactions"
+                      />
+                      <img
+                        src="../Images/svg23.svg"
+                        alt=""
+                        class="imagen__reactions"
+                      />
+                      <img
+                        src="../Images/svg24.svg"
+                        alt=""
+                        class="imagen__reactions"
+                      />
+                    </div>
+                    <div class="reactions_box-raw">
+                      <p class="reactions_box-text">33</p>
+                      <p class="reactions_box-text">3</p>
+                      <p class="reactions_box-text">2</p>
+                      <p class="reactions_box-text">3</p>
+                      <p class="reactions_box-text">5</p>
+                    </div>
+                  </div>
 
+                  <!--Aqui acaba-->
+                </div>
+              </div>
+              <div id="icon-comments">
+                <img
+                  src="../Images/chat-bubble_3114810.png"
+                  alt=""
+                  class="icon_white"
+                />
+                <p id="total-comments"></p>
+              </div>
+              <img src="../Images/save-white.png" alt="" class="icon_white" />
+              <p>27</p>
+            </div>
+          </div>
+          <!-- ---------------Inicia Aside Izquierdo Section B--------------- -->
+        </aside>
+
+        <main class="post__container col-12 col-md-9 col-lg-7 mt-5">
+          <div class="card">
+            <img class="card-img-top" alt="..." id="image-post" />
+            <div class="card-body">
+              <div class="partners__container">
+                <div class="partners__container-invisible">
+                  <div class="circle" id="user-image"></div>
+                </div>
+                <p class="partners__container-text" id="user-name"></p>
+                <p class="partners__container-text" id="date-post"></p>
+              </div>
+              <div class="reactions_box_2">
+                <div class="reactions_box-raw-2 d-flex">
+                  <div class="div-imagen_and_text">
+                    <img
+                      src="../Images/svg20.svg"
+                      alt=""
+                      class="imagen__reactions"
+                    />
+                    <span>33</span>
+                  </div>
+                  <div class="div-imagen_and_text">
+                    <img
+                      src="../Images/svg21.svg"
+                      alt=""
+                      class="imagen__reactions"
+                    />
+                    <span>3</span>
+                  </div>
+                  <div class="div-imagen_and_text">
+                    <img
+                      src="../Images/svg22.svg"
+                      alt=""
+                      class="imagen__reactions"
+                    />
+                    <span>2</span>
+                  </div>
+                  <div class="div-imagen_and_text">
+                    <img
+                      src="../Images/svg23.svg"
+                      alt=""
+                      class="imagen__reactions"
+                    />
+                    <span>3</span>
+                  </div>
+                  <div class="div-imagen_and_text">
+                    <img
+                      src="../Images/svg24.svg"
+                      alt=""
+                      class="imagen__reactions"
+                    />
+                    <span>5</span>
+                  </div>
+                </div>
+              </div>
+              <h4 class="card-title in_card_title" id="title-post"></h4>
+              <ul
+                class="card__tags d-flex flex-wrap list-unstyled"
+                id="tags-post"
+              ></ul>
+              <div class="reactions__container d-flex">
+                <article class="me-3">
+                  <span class="d-none">111</span>
+                  <span class="d-none">Reactions</span>
+                </article>
+                <article class="me-3" id="content-post"></article>
+              </div>
+              <div class="action__buttons">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button
+                    class="btn btn-outline-primary me-md-2"
+                    type="button"
+                    id="edit-post"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-outline-danger"
+                    type="button"
+                    id="delete-post"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="tittle_button">
+                <h3 class="card-title">Top comments</h3>
+                <button class="button-subscribe">Subscribe</button>
+              </div>
+              <div class="container_space"></div>
+
+              <div class="comments">
+                <div class="profile_picture"></div>
+                <div class="comment_box" style="border: none; width: 100%">
+                  <textarea
+                    class="form-control"
+                    placeholder="Add to the discussion"
+                    rows="3"
+                    id="comment"
+                  ></textarea>
+                  <div id="e-comment" class="invalid-feedback">
+                    Please enter a comment
+                  </div>
+                  <div class="container_space"></div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="input-user"
+                    placeholder="Nombre del Usuario"
+                  />
+                  <div id="e-input-user" class="invalid-feedback">
+                    Please enter a username
+                  </div>
+                  <div class="container_space"></div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="input-image-user"
+                    placeholder="URL de la Imagen del Usuario"
+                  />
+                  <div id="e-input-image-user" class="invalid-feedback">
+                    Please enter the user's avatar URL
+                  </div>
+                </div>
+              </div>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
+                <button
+                  class="btn btn-primary me-md-2"
+                  type="button"
+                  id="send-comment"
+                >
+                  Submit
+                </button>
+              </div>
+              <div class="container_space"></div>
+              <div class="container__comments" id="container-comments"></div>
+              <button class="button-subscribe-view" id="all-comments">
+                View all comments
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="tittle_button">
+                <h3 class="card-title">Read next</h3>
+              </div>
+              <div class="container_space"></div>
+
+              <div class="comments">
+                <div class="profile_picture">
+                  <div class="circle-4"></div>
+                </div>
+                <div class="comment_box-2">
+                  <h4 class="comment_title">Bulding an image Slider</h4>
+                  <p>Aneeqa Khan</p>
+                </div>
+              </div>
+              <div class="container_space"></div>
+            </div>
+          </div>
+        </main>
+        <!-- ______________ INICIA ASIDE DERECHO DEL POST---------------------- -->
+
+        <aside
+          class="AsideRigth-post__container col-3 d-none d-lg-block p-0 mt-5"
+        >
+          <div class="Photo__Container card">
+            <div class="card-header bg-secondary"></div>
+            <div class="card-body text-center">
+              <div
+                class="photo-perfil__container row g-0 position-absolute top-0 start-10 mt-3"
+                style="max-height: 45px"
+              >
+                <div class="col-md-4" style="width: 10%">
+                  <img
+                    src="./mediaPs/SriKanth.webp"
+                    class="img-fluid rounded-circle"
+                    alt="..."
+                    id="user-image-title"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mt-2 text-start" id="user-title">
+                      Srikanth
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="follow-Sri__container mt-3 p-2">
+              <a href="#" class="btn btn-primary d-grid gap-2">Follow</a>
+            </div>
+
+            <ul
+              class="Information__container list-group list-group-flush border-0"
+            >
+              <li class="resume-item list-group-item border-0">
+                I am a software engineer at product consultancy, hedgehog lab.
+                Right now I am focused on learning interesting things and
+                writing about them in public.👨‍💻
+              </li>
+              <li
+                class="locations-item list-group-item border-0 small"
+                style="max-height: 50px"
+              >
+                LOCATION
+                <p>Newcastle, UK</p>
+              </li>
+              <li
+                class="education-item list-group-item border-0 small"
+                style="max-height: 50px"
+              >
+                EDUCATION
+                <p>Bachelor of Engineering</p>
+              </li>
+              <li
+                class="work-item list-group-item border-0 small"
+                style="max-height: 50px"
+              >
+                WORK
+                <p>Senior Backend Engineer</p>
+              </li>
+              <li class="date-item list-group-item small">
+                JOINED
+                <p>Jun 29, 2017</p>
+              </li>
             </ul>
-            <div class="reactions__container d-flex">
-              <article class="me-3">
-                <span class="d-none">111</span>
-                <span class="d-none">Reactions</span>
-              </article>
-              <article class="me-3" id="content-post">                
-              </article>              
-            </div>
-            <div class="action__buttons">
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-outline-primary me-md-2" type="button" id="edit-post">Edit</button>
-                <button class="btn btn-outline-danger" type="button" id="delete-post">Delete</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="tittle_button">
-              <h3 class="card-title">Top comments</h3>
-              <button class="button-subscribe">Subscribe</button>
-            </div>
-            <div class="container_space"></div>
-
-            <div class="comments">
-              <div class="profile_picture">
-                
-              </div>
-              <div class="comment_box" style="border: none; width: 100%;">
-                <textarea class="form-control" placeholder="Add to the discussion" rows="3" id="comment"></textarea>
-                <div id="e-comment" class="invalid-feedback">
-                  Please enter a comment
-                </div>
-                <div class="container_space"></div>
-                <input type="text" class="form-control" id="input-user" placeholder="Nombre del Usuario">
-                <div id="e-input-user" class="invalid-feedback">
-                  Please enter a username
-                </div>
-                <div class="container_space"></div>
-                <input type="text" class="form-control" id="input-image-user" placeholder="URL de la Imagen del Usuario">
-                <div id="e-input-image-user" class="invalid-feedback">
-                  Please enter the user's avatar URL
-                </div>
-              </div>
-            </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
-              <button class="btn btn-primary me-md-2" type="button" id="send-comment">Submit</button>
-            </div>
-            <div class="container_space"></div>
-            <div class="container__comments" id="container-comments">
-            </div>
-            <button class="button-subscribe-view" id="all-comments">View all comments</button>
-
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="tittle_button">
-              <h3 class="card-title">Read next</h3>
-            </div>
-            <div class="container_space"></div>
-
-            <div class="comments">
-              <div class="profile_picture">
-                <div class="circle-4"></div>
-              </div>
-              <div class="comment_box-2">
-                <h4 class="comment_title">Bulding an image Slider</h4>
-                <p>Aneeqa Khan</p>
-
-              </div>
-            </div>
-            <div class="container_space"></div>
-
-          </div>
-        </div>
-      </main>
-      <!-- ______________ INICIA ASIDE DERECHO DEL POST---------------------- -->
-
-      <aside class="AsideRigth-post__container col-3 d-none d-lg-block p-0 mt-5">
-        <div class="Photo__Container card">
-          <div class="card-header bg-secondary"></div>
-          <div class="card-body text-center">
-            <div class="photo-perfil__container row g-0 position-absolute top-0 start-10 mt-3" style="max-height: 45px">
-              <div class="col-md-4" style="width: 10%;">
-                <img src="./mediaPs/SriKanth.webp" class="img-fluid rounded-circle" alt="..." id="user-image-title"/>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title mt-2 text-start" id="user-title">Srikanth</h5>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <div class="follow-Sri__container mt-3 p-2">
-            <a href="#" class="btn btn-primary d-grid gap-2">Follow</a>
+          <div class="More-from__Container card mt-3">
+            <div class="more-head card-header fw-bolder">
+              More from
+              <a href="https://dev.to/svemaraju" class=""
+                ><label id="user-name-profile">Srikanth</label></a
+              >
+            </div>
+            <ul class="posts__container list-group list-group-flush">
+              <li class="first-post list-group-item">
+                <p>
+                  <a
+                    href="https://dev.to/svemaraju/deploying-software-is-like-opening-a-new-bakery-2860"
+                    class="description-post link-underline-primary link-underline-opacity-0"
+                    >Deploying software is like opening a new bakery 🧁</a
+                  >
+                </p>
+                <ul
+                  class="first-tags__container d-flex flex-wrap list-unstyled small text-black"
+                  style="--bs-text-opacity: 0.5"
+                >
+                  <li class="tag__container me-2">#discuss</li>
+                  <li class="tag__container me-2">#writing</li>
+                  <li class="tag__container me-2">#beginners</li>
+                  <li class="tag__container me-2">#programming</li>
+                </ul>
+              </li>
+              <li class="second-post list-group-item">
+                <p>
+                  <a
+                    href="https://dev.to/svemaraju/using-an-orm-over-writing-raw-sql-queries--3020"
+                    class="description-post link-underline-primary link-underline-opacity-0"
+                    >Using an ORM over writing raw SQL queries ...</a
+                  >
+                </p>
+                <ul
+                  class="second-tags__container d-flex flex-wrap list-unstyled small text-black"
+                  style="--bs-text-opacity: 0.5"
+                >
+                  <li class="tag__container me-2">#webdev</li>
+                  <li class="tag__container me-2">#python</li>
+                  <li class="tag__container me-2">#programming</li>
+                  <li class="tag__container me-2">#django</li>
+                </ul>
+              </li>
+              <li class="three-post list-group-item">
+                <p>
+                  <a
+                    href="https://dev.to/svemaraju/5-simple-recursion-programs-in-python-2bja"
+                    class="description-post link-underline-primary link-underline-opacity-0"
+                    >5 Simple Recursion Programs in Python.</a
+                  >
+                </p>
+                <ul
+                  class="three-tags__container d-flex flex-wrap list-unstyled small text-black"
+                  style="--bs-text-opacity: 0.5"
+                >
+                  <li class="tag__container me-2">#phyton</li>
+                  <li class="tag__container me-2">#beginners</li>
+                  <li class="tag__container me-2">#codenewbie</li>
+                  <li class="tag__container me-2">#algorithms</li>
+                </ul>
+              </li>
+            </ul>
           </div>
 
-          <ul class="Information__container list-group list-group-flush border-0">
-            <li class="resume-item list-group-item border-0">
-              I am a software engineer at product consultancy, hedgehog lab.
-              Right now I am focused on learning interesting things and
-              writing about them in public.👨‍💻
-            </li>
-            <li class="locations-item list-group-item border-0 small" style="max-height: 50px">
-              LOCATION
-              <p>Newcastle, UK</p>
-            </li>
-            <li class="education-item list-group-item border-0 small" style="max-height: 50px">
-              EDUCATION
-              <p>Bachelor of Engineering</p>
-            </li>
-            <li class="work-item list-group-item border-0 small" style="max-height: 50px">
-              WORK
-              <p>Senior Backend Engineer</p>
-            </li>
-            <li class="date-item list-group-item small">
-              JOINED
-              <p>Jun 29, 2017</p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="More-from__Container card mt-3">
-          <div class="more-head card-header fw-bolder">
-            More from <a href="https://dev.to/svemaraju" class=""><label id="user-name-profile">Srikanth</label></a>
-          </div>
-          <ul class="posts__container list-group list-group-flush">
-            <li class="first-post list-group-item">
-              <p>
-                <a href="https://dev.to/svemaraju/deploying-software-is-like-opening-a-new-bakery-2860"
-                  class="description-post link-underline-primary link-underline-opacity-0">Deploying software is like
-                  opening a new bakery 🧁</a>
-              </p>
-              <ul class="first-tags__container d-flex flex-wrap list-unstyled small text-black"
-                style="--bs-text-opacity: 0.5">
-                <li class="tag__container me-2">#discuss</li>
-                <li class="tag__container me-2">#writing</li>
-                <li class="tag__container me-2">#beginners</li>
-                <li class="tag__container me-2">#programming</li>
-              </ul>
-            </li>
-            <li class="second-post list-group-item">
-              <p>
-                <a href="https://dev.to/svemaraju/using-an-orm-over-writing-raw-sql-queries--3020"
-                  class="description-post link-underline-primary link-underline-opacity-0">Using an ORM over writing raw
-                  SQL queries ...</a>
-              </p>
-              <ul class="second-tags__container d-flex flex-wrap list-unstyled small text-black"
-                style="--bs-text-opacity: 0.5">
-                <li class="tag__container me-2">#webdev</li>
-                <li class="tag__container me-2">#python</li>
-                <li class="tag__container me-2">#programming</li>
-                <li class="tag__container me-2">#django</li>
-              </ul>
-            </li>
-            <li class="three-post list-group-item">
-              <p>
-                <a href="https://dev.to/svemaraju/5-simple-recursion-programs-in-python-2bja"
-                  class="description-post link-underline-primary link-underline-opacity-0">5 Simple Recursion Programs
-                  in Python.</a>
-              </p>
-              <ul class="three-tags__container d-flex flex-wrap list-unstyled small text-black"
-                style="--bs-text-opacity: 0.5">
-                <li class="tag__container me-2">#phyton</li>
-                <li class="tag__container me-2">#beginners</li>
-                <li class="tag__container me-2">#codenewbie</li>
-                <li class="tag__container me-2">#algorithms</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-        <div class="DEV__Container card mt-3 mb-3 sticky-top">
-          <div class="dev__header card-header float-start">
-            DEV Community
-            <div class="help__botton btn-group float-end" role="group">
-              <button type="button" class="dev__botton btn btn-outline-secondary border-0 dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <!-- <img
+          <div class="DEV__Container card mt-3 mb-3 sticky-top">
+            <div class="dev__header card-header float-start">
+              DEV Community
+              <div class="help__botton btn-group float-end" role="group">
+                <button
+                  type="button"
+                  class="dev__botton btn btn-outline-secondary border-0 dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <!-- <img
                     src="./svgs_collection_2/puntos suspensivos.svg"
                     class=""
                     style="width: 15px"
                   /> -->
-              </button>
-              <ul class="help-menu__container dropdown-menu">
-                <li class="help-menu-one d-flex p-2">
-                  <img src="./mediaPs/i.svg" style="width: 15px" />
-                  <a class="dropdown-item" href="https://dev.to/billboards">What´s a billboard?</a>
-                </li>
-                <li class="help-menu__two d-flex p-2">
-                  <img src="./mediaPs/engrane.svg" style="width: 15px" />
-                  <a class="dropdown-item" href="https://dev.to/settings/customization#sponsors">Manage preferences</a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li class="help-menu__three d-flex p-2">
-                  <img src="./mediaPs/bandera.svg" style="width: 15px" />
-                  <a class="dropdown-item" href="https://dev.to/report-abuse?billboard=2777">Report billboard</a>
-                </li>
-              </ul>
+                </button>
+                <ul class="help-menu__container dropdown-menu">
+                  <li class="help-menu-one d-flex p-2">
+                    <img src="./mediaPs/i.svg" style="width: 15px" />
+                    <a class="dropdown-item" href="https://dev.to/billboards"
+                      >What´s a billboard?</a
+                    >
+                  </li>
+                  <li class="help-menu__two d-flex p-2">
+                    <img src="./mediaPs/engrane.svg" style="width: 15px" />
+                    <a
+                      class="dropdown-item"
+                      href="https://dev.to/settings/customization#sponsors"
+                      >Manage preferences</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li class="help-menu__three d-flex p-2">
+                    <img src="./mediaPs/bandera.svg" style="width: 15px" />
+                    <a
+                      class="dropdown-item"
+                      href="https://dev.to/report-abuse?billboard=2777"
+                      >Report billboard</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="text-dev__container card-body">
+              <h4 class="tex-dev-title card-title fw-bolder">
+                👋 Are you an expert?
+              </h4>
+              <h5 class="tex-dev-subtitle">
+                Want more relevant content on DEV?
+              </h5>
+              <h6 class="tex-dev-othersubtitle">It's simple!</h6>
+              <span class="tex-dev-parraf card-text">
+                Go into your
+                <a href="https://dev.to/settings/customization" class=""
+                  >settings</a
+                >
+              </span>
+              <span class="tex-dev-experience card-text"
+                >and set your experience level.</span
+              >
             </div>
           </div>
-          <div class="text-dev__container card-body">
-            <h4 class="tex-dev-title card-title fw-bolder">👋 Are you an expert?</h4>
-            <h5 class="tex-dev-subtitle">Want more relevant content on DEV?</h5>
-            <h6 class="tex-dev-othersubtitle">It's simple!</h6>
-            <span class="tex-dev-parraf card-text">
-              Go into your <a href="https://dev.to/settings/customization" class="">settings</a>
-            </span>
-            <span class="tex-dev-experience card-text">and set your experience level.</span>
-          </div>
+        </aside>
+      </div>
+    </div>
+
+    <footer>
+      <div class="col-12 item-grey card border-0 mt-2 text-center">
+        <div class="card-body">
+          <p class="card-text">
+            <a class="card__anchor-text anchor-decoration">DEV Community</a> A
+            constructive and inclusive social network for software developers.
+            With you every step of your journey.
+          </p>
+          <p class="card-text">
+            Built on <a class="anchor-decoration" href="">Forem</a> — the
+            <a class="anchor-decoration" href="">open source</a> software that
+            powers <a class="anchor-decoration" href="">DEV</a> and other
+            inclusive communities.
+          </p>
+          <p class="class">
+            Made with love and
+            <a class="anchor-decoration" href="">Ruby on Rails.</a> DEV
+            Community © 2016 - 2023.
+          </p>
         </div>
-      </aside>
+      </div>
+    </footer>
 
-    </div>
-  </div>
-
-  <footer>
-    <div class="col-12 item-grey card border-0 mt-2 text-center">
-      <div class="card-body">
-        <p class="card-text"><a class="card__anchor-text anchor-decoration">DEV Community</a> A constructive and
-          inclusive social network for software developers. With you every step of your journey.</p>
-        <p class="card-text">Built on <a class="anchor-decoration" href="">Forem</a> — the <a class="anchor-decoration"
-            href="">open source</a> software that powers <a class="anchor-decoration" href="">DEV</a> and other
-          inclusive communities.</p>
-        <p class="class">Made with love and <a class="anchor-decoration" href="">Ruby on Rails.</a> DEV Community © 2016
-          - 2023.</p>
+    <!-- -------inicia OFFCANVAS POST---------------- -->
+    <div
+      class="Post-offcanvas__container offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          Some text as placeholder. In real life you can have the elements you
+          have chosen. Like, text, images, lists, etc.
+        </div>
+        <div class="dropdown mt-3">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+          >
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <!-- -------inicia OFFCANVAS POST---------------- -->
-  <div class="Post-offcanvas__container offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-    aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div>
-        Some text as placeholder. In real life you can have the elements you
-        have chosen. Like, text, images, lists, etc.
-      </div>
-      <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-  <script src="comments.js"></script>
-</body>
-
+    <script src="script.js"></script>
+    <script src="comments.js"></script>
+  </body>
 </html>
