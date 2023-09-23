@@ -116,7 +116,7 @@ const renderPost = (infoPost, index) => {
     card_comment_icon_img.src = '../Images/coments.svg';
     const card_coment_number = document.createElement('li')
     card_coment_number.className = 'card__coment-number';
-    card_coment_number.textContent = infoPost.comentarios.length;
+    card_coment_number.textContent = infoPost.comentarios==undefined?0:infoPost.comentarios.length;
     const card_coment_text = document.createElement('li');
     card_coment_text.className = 'card__coment-text d-none d-md-block mx-2';
     card_coment_text.textContent = 'Comments';
@@ -137,7 +137,7 @@ const renderPost = (infoPost, index) => {
     button_card_delete.dataset.post = infoPost.id;
     button_card_delete.style.position = 'relative'
     button_card_delete.style.left = '42px'
-    button_card_delete.style.top = '-169px'
+    button_card_delete.style.top = '-149px'
     button_card_delete.textContent = 'Delete Post';
     //borrar
     const small_card_read = document.createElement('small');
@@ -215,7 +215,7 @@ const renderPost = (infoPost, index) => {
     interaction_container.appendChild(card_read_save);
     card_read_save.appendChild(card_read);
     card_read_save.appendChild(card_deleteButton)
-    card_deleteButton.appendChild(button_card_delete)
+    //card_deleteButton.appendChild(button_card_delete)
     card_read.appendChild(small_card_read);
     card_read_save.appendChild(card_save);
     card_save.appendChild(card_save_img);
@@ -283,7 +283,7 @@ const getInfo = async() => {
         if(response.status !== 201){
             const parsed = await response.json();
             const responseParsed = parserResponseFireBase(parsed);
-            const responseParsedSearch =  responseParsed.filter(post => post.title.includes(string) || post.contenido.includes(string));
+            const responseParsedSearch =  responseParsed.filter(post => post.title.includes(string) || post.contenido.includes(string) || post.tags.includes(string));
             cleanList();
 
             renderPostList(responseParsedSearch)
