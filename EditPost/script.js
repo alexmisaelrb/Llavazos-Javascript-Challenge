@@ -1,4 +1,4 @@
-const URL_FIREBASE = 'https://prueballavazos-default-rtdb.firebaseio.com/'
+const URL_FIREBASE = 'https://desafiojs-147da-default-rtdb.firebaseio.com/'
 const search = window.location.search  
 const url = new URLSearchParams(search) 
 const ID_POST = url.get('id')        
@@ -55,7 +55,7 @@ const updatePost = async() => {
         body: JSON.stringify(post)
     })
     if(response.status === 200){
-        window.location.href = '/Post/indexPs.html?id=' + ID_POST
+        window.location.href = '/Llavazos-Javascript-Challenge/Post/indexPs.html?id=' + ID_POST
     }
 }
 
