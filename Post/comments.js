@@ -42,8 +42,12 @@ const getComments = async() => {
     try{
         const response = await fetch(URL_FIREBASE_COMMENTS, {method:'GET'});
         comentarios = await response.json();
-        TOTAL_COMMENTS.textContent = comentarios.length;
-        renderComments(comentarios);
+        if(comentarios != null){
+            TOTAL_COMMENTS.textContent = comentarios.length;
+            renderComments(comentarios);
+        }else{
+            TOTAL_COMMENTS.textContent = 0;
+        }
     } catch(error){
         console.log(error);
     }
